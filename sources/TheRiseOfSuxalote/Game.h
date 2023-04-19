@@ -7,5 +7,5 @@
 class SUXALOTE_API Game {
 public:
 	Game();
-	void prueba();
 };
+extern "C" SUXALOTE_API void prueba();
