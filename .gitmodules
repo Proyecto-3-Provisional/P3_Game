@@ -1,3 +1,3 @@
-[submodule "Magma_Engine"]
-	path = Magma_Engine
-	url = https://github.com/Proyecto-3-Provisional/Magma_Engine.git
+[submodule "MagmaEngine"]
+	path = MagmaEngine
+	url = https://github.com/Proyecto-3-Provisional/Magma_Engine
