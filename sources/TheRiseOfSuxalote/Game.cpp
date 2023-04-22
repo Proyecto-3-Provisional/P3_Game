@@ -2,6 +2,7 @@
 #include <iostream>
 
 #include <EC/entity.h>
+#include <Input/input_manager.h>
 #include <Physics/rigidbody.h>
 
 
@@ -40,14 +41,20 @@ namespace magma_game
 	}
 
 	void PlayerController::update(float deltaTime)
-	{
-		//Singleton<magma_engine::InputManager>::instance()->showOrHideMouse();
-		
+	{		
 		rb = ent->getComponent<magma_engine::Rigidbody>();
-		rb->isEnable();
-		//rb->addForce(magma_engine::Vector3D(0,0,0));
-		//rb->isOnCollision();
-		//rb->isCollideWith(0);
+		if (Singleton<magma_engine::InputManager>::instance()->isKeyDown(SCANCODE_A)) {
+			rb->addForce(magma_engine::Vector3D(-1, 0, 0));
+		}
+		else if (Singleton<magma_engine::InputManager>::instance()->isKeyDown(SCANCODE_D)) {
+			rb->addForce(magma_engine::Vector3D(1, 0, 0));
+		}
+		else if (Singleton<magma_engine::InputManager>::instance()->isKeyDown(SCANCODE_W)) {
+			rb->addForce(magma_engine::Vector3D(0, 0, -1));
+		}
+		else if (Singleton<magma_engine::InputManager>::instance()->isKeyDown(SCANCODE_S)) {
+			rb->addForce(magma_engine::Vector3D(0, 0, 1));
+		}
 	}
 }
 
