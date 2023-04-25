@@ -30,6 +30,9 @@
     <ClCompile Include="..\..\sources\TheRiseOfSuxalote\EnemyMovement.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\sources\TheRiseOfSuxalote\size.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\sources\TheRiseOfSuxalote\framework.h">
@@ -45,6 +48,9 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="..\..\sources\TheRiseOfSuxalote\EnemyMovement.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sources\TheRiseOfSuxalote\size.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

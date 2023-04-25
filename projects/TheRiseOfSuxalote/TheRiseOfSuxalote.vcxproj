@@ -173,6 +173,7 @@
     <ClCompile Include="..\..\sources\TheRiseOfSuxalote\Game.cpp" />
     <ClCompile Include="..\..\sources\TheRiseOfSuxalote\PlayerController.cpp" />
     <ClCompile Include="..\..\sources\TheRiseOfSuxalote\PowerUpMovement.cpp" />
+    <ClCompile Include="..\..\sources\TheRiseOfSuxalote\size.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\sources\TheRiseOfSuxalote\EnemyMovement.h" />
@@ -180,6 +181,7 @@
     <ClInclude Include="..\..\sources\TheRiseOfSuxalote\Game.h" />
     <ClInclude Include="..\..\sources\TheRiseOfSuxalote\PlayerController.h" />
     <ClInclude Include="..\..\sources\TheRiseOfSuxalote\PowerUpMovement.h" />
+    <ClInclude Include="..\..\sources\TheRiseOfSuxalote\size.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\sources\TheRiseOfSuxalote\cpp.hint" />
