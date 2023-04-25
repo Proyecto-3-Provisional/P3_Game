@@ -21,12 +21,30 @@
     <ClCompile Include="..\..\sources\TheRiseOfSuxalote\Game.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\sources\TheRiseOfSuxalote\PlayerController.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\sources\TheRiseOfSuxalote\PowerUpMovement.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\sources\TheRiseOfSuxalote\EnemyMovement.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\sources\TheRiseOfSuxalote\framework.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="..\..\sources\TheRiseOfSuxalote\Game.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sources\TheRiseOfSuxalote\PlayerController.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sources\TheRiseOfSuxalote\PowerUpMovement.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sources\TheRiseOfSuxalote\EnemyMovement.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

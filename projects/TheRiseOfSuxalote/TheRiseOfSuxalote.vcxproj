@@ -169,11 +169,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\sources\TheRiseOfSuxalote\dllmain.cpp" />
+    <ClCompile Include="..\..\sources\TheRiseOfSuxalote\EnemyMovement.cpp" />
     <ClCompile Include="..\..\sources\TheRiseOfSuxalote\Game.cpp" />
+    <ClCompile Include="..\..\sources\TheRiseOfSuxalote\PlayerController.cpp" />
+    <ClCompile Include="..\..\sources\TheRiseOfSuxalote\PowerUpMovement.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\sources\TheRiseOfSuxalote\EnemyMovement.h" />
     <ClInclude Include="..\..\sources\TheRiseOfSuxalote\framework.h" />
     <ClInclude Include="..\..\sources\TheRiseOfSuxalote\Game.h" />
+    <ClInclude Include="..\..\sources\TheRiseOfSuxalote\PlayerController.h" />
+    <ClInclude Include="..\..\sources\TheRiseOfSuxalote\PowerUpMovement.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\sources\TheRiseOfSuxalote\cpp.hint" />
