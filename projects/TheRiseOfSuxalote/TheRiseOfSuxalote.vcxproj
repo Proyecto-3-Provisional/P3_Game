@@ -142,7 +142,8 @@
       <AdditionalDependencies>EC.lib;Input.lib;Physics.lib;MagmaEngine_d.lib</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /y "$(SolutionDir)libraries\$(ProjectName)\$(Platform)\$(Configuration)\TheRiseOfSuxalote_d.dll" "$(SolutionDir)MagmaEngine\executables"</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -164,7 +165,8 @@
       <AdditionalDependencies>EC.lib;Input.lib;Physics.lib;MagmaEngine.lib</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /y "$(SolutionDir)libraries\$(ProjectName)\$(Platform)\$(Configuration)\TheRiseOfSuxalote.dll" "$(SolutionDir)MagmaEngine\executables"</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
