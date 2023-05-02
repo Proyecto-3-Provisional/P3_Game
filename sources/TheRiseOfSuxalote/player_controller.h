@@ -7,7 +7,7 @@
 
 namespace magma_game
 {
-	class PlayerController : public magma_engine::ec::Component
+	class PlayerController : public magma_engine::Component
 	{
 	public:
 		PlayerController();

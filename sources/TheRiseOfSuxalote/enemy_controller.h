@@ -7,7 +7,7 @@
 
 namespace magma_game
 {
-	class EnemyController : public magma_engine::ec::Component
+	class EnemyController : public magma_engine::Component
 	{
 	public:
 		EnemyController();

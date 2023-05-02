@@ -10,22 +10,22 @@
 
 namespace magma_game
 {
-	/*magma_engine::ec::Component* ProgressBarFactory::createComponent(magma_engine::ec::Entity* e)
+	magma_engine::Component* ProgressBarFactory::createComponent(magma_engine::Entity* e)
 	{
 		return e->addComponent<Progress_Bar>();
-	}*/
+	}
 
-	magma_engine::ec::Component* TimerFactory::createComponent(magma_engine::ec::Entity* e)
+	magma_engine::Component* TimerFactory::createComponent(magma_engine::Entity* e)
 	{
 		return e->addComponent<Timer>();
 	}
 
-	magma_engine::ec::Component* PlayerControllerFactory::createComponent(magma_engine::ec::Entity* e)
+	magma_engine::Component* PlayerControllerFactory::createComponent(magma_engine::Entity* e)
 	{
 		return e->addComponent<PlayerController>();
 	}
 
-	magma_engine::ec::Component* EnemyControllerFactory::createComponent(magma_engine::ec::Entity* e)
+	magma_engine::Component* EnemyControllerFactory::createComponent(magma_engine::Entity* e)
 	{
 		return e->addComponent<EnemyController>();
 	}
@@ -34,7 +34,7 @@ namespace magma_game
 	{
 		magma_engine::FactoryManager::instance()->addFactory("PlayerController", new PlayerControllerFactory());
 		magma_engine::FactoryManager::instance()->addFactory("EnemyController", new EnemyControllerFactory());
-		//magma_engine::FactoryManager::instance()->addFactory("ProgressBar", new ProgressBarFactory());
+		magma_engine::FactoryManager::instance()->addFactory("ProgressBar", new ProgressBarFactory());
 		magma_engine::FactoryManager::instance()->addFactory("Timer", new TimerFactory());
 	}
 }

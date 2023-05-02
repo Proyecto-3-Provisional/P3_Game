@@ -5,7 +5,7 @@
 
 namespace magma_game
 {
-	class Timer : public magma_engine::ec::Component
+	class Timer : public magma_engine::Component
 	{
 	public:
 

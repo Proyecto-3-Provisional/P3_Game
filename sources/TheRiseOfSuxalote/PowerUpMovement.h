@@ -4,7 +4,7 @@
 //
 //namespace magma_game
 //{
-//	class PowerUpMovement : public magma_engine::ec::Component
+//	class PowerUpMovement : public magma_engine::Component
 //	{
 //	public:
 //		PowerUpMovement(int x, int z);
