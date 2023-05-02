@@ -1,5 +1,11 @@
 #pragma once
 
+#ifdef SUXALOTE_EXPORTS
+#define SUXALOTE_API __declspec(dllexport)
+#else
+#define SUXALOTE_API __declspec(dllimport)
+#endif
+
 #include <EC/factory.h>
 
 namespace magma_game
@@ -30,6 +36,6 @@ namespace magma_game
 		magma_engine::Component* createComponent(magma_engine::Entity* e);
 	};
 
-	void setUpGameFactories();
+	extern "C" SUXALOTE_API void setUpGameFactories();
 }
 
