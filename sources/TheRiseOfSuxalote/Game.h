@@ -14,21 +14,3 @@ public:
 };
 extern "C" SUXALOTE_API void prueba();
 
-namespace magma_game
-{
-	class PlayerController : public magma_engine::ec::Component
-	{
-	public:
-		PlayerController();
-		~PlayerController();
-
-		bool initComponent() override;
-		void update(float deltaTime) override;
-
-
-	private:
-		magma_engine::Rigidbody* rb;
-		
-	};
-}
-

@@ -21,16 +21,22 @@
     <ClCompile Include="..\..\sources\TheRiseOfSuxalote\Game.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\sources\TheRiseOfSuxalote\PlayerController.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\sources\TheRiseOfSuxalote\PowerUpMovement.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\sources\TheRiseOfSuxalote\EnemyMovement.cpp">
+    <ClCompile Include="..\..\sources\TheRiseOfSuxalote\player_controller.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\sources\TheRiseOfSuxalote\size.cpp">
+    <ClCompile Include="..\..\sources\TheRiseOfSuxalote\progress_bar.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\sources\TheRiseOfSuxalote\timer.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\sources\TheRiseOfSuxalote\enemy_controller.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\sources\TheRiseOfSuxalote\init_game_factories.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
@@ -41,16 +47,22 @@
     <ClInclude Include="..\..\sources\TheRiseOfSuxalote\Game.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\sources\TheRiseOfSuxalote\PlayerController.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\sources\TheRiseOfSuxalote\PowerUpMovement.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\sources\TheRiseOfSuxalote\EnemyMovement.h">
+    <ClInclude Include="..\..\sources\TheRiseOfSuxalote\player_controller.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\sources\TheRiseOfSuxalote\size.h">
+    <ClInclude Include="..\..\sources\TheRiseOfSuxalote\progress_bar.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sources\TheRiseOfSuxalote\timer.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sources\TheRiseOfSuxalote\enemy_controller.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sources\TheRiseOfSuxalote\init_game_factories.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

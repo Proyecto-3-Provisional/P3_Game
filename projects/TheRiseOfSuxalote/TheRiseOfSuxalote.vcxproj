@@ -133,13 +133,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)MagmaEngine\sources</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)MagmaEngine\sources;$(SolutionDir)MagmaEngine\dependencies\ogre\builds\x64\SDL2-2.24.1\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)MagmaEngine\libraries\EC\$(Platform)\$(Configuration);$(SolutionDir)MagmaEngine\libraries\Input\$(Platform)\$(Configuration);$(SolutionDir)MagmaEngine\libraries\Physics\$(Platform)\$(Configuration);$(SolutionDir)MagmaEngine\libraries\MagmaEngine\$(Platform)\$(Configuration)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>EC.lib;Input.lib;Physics.lib;MagmaEngine_d.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)MagmaEngine\libraries\EC\$(Platform)\$(Configuration);$(SolutionDir)MagmaEngine\libraries\Input\$(Platform)\$(Configuration);$(SolutionDir)MagmaEngine\libraries\Physics\$(Platform)\$(Configuration);$(SolutionDir)MagmaEngine\libraries\Render\$(Platform)\$(Configuration)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>EC.lib;Input.lib;Physics.lib;Render.lib</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>
@@ -154,15 +154,15 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)MagmaEngine\sources</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)MagmaEngine\sources;$(SolutionDir)MagmaEngine\dependencies\ogre\builds\x64\SDL2-2.24.1\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)MagmaEngine\libraries\EC\$(Platform)\$(Configuration);$(SolutionDir)MagmaEngine\libraries\Input\$(Platform)\$(Configuration);$(SolutionDir)MagmaEngine\libraries\Physics\$(Platform)\$(Configuration);$(SolutionDir)MagmaEngine\libraries\MagmaEngine\$(Platform)\$(Configuration)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>EC.lib;Input.lib;Physics.lib;MagmaEngine.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)MagmaEngine\libraries\EC\$(Platform)\$(Configuration);$(SolutionDir)MagmaEngine\libraries\Input\$(Platform)\$(Configuration);$(SolutionDir)MagmaEngine\libraries\Physics\$(Platform)\$(Configuration);$(SolutionDir)MagmaEngine\libraries\Render\$(Platform)\$(Configuration)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>EC.lib;Input.lib;Physics.lib;Render.lib</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>
@@ -171,19 +171,23 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\sources\TheRiseOfSuxalote\dllmain.cpp" />
-    <ClCompile Include="..\..\sources\TheRiseOfSuxalote\EnemyMovement.cpp" />
+    <ClCompile Include="..\..\sources\TheRiseOfSuxalote\enemy_controller.cpp" />
     <ClCompile Include="..\..\sources\TheRiseOfSuxalote\Game.cpp" />
-    <ClCompile Include="..\..\sources\TheRiseOfSuxalote\PlayerController.cpp" />
+    <ClCompile Include="..\..\sources\TheRiseOfSuxalote\init_game_factories.cpp" />
+    <ClCompile Include="..\..\sources\TheRiseOfSuxalote\player_controller.cpp" />
     <ClCompile Include="..\..\sources\TheRiseOfSuxalote\PowerUpMovement.cpp" />
-    <ClCompile Include="..\..\sources\TheRiseOfSuxalote\size.cpp" />
+    <ClCompile Include="..\..\sources\TheRiseOfSuxalote\progress_bar.cpp" />
+    <ClCompile Include="..\..\sources\TheRiseOfSuxalote\timer.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\sources\TheRiseOfSuxalote\EnemyMovement.h" />
+    <ClInclude Include="..\..\sources\TheRiseOfSuxalote\enemy_controller.h" />
     <ClInclude Include="..\..\sources\TheRiseOfSuxalote\framework.h" />
     <ClInclude Include="..\..\sources\TheRiseOfSuxalote\Game.h" />
-    <ClInclude Include="..\..\sources\TheRiseOfSuxalote\PlayerController.h" />
+    <ClInclude Include="..\..\sources\TheRiseOfSuxalote\init_game_factories.h" />
+    <ClInclude Include="..\..\sources\TheRiseOfSuxalote\player_controller.h" />
     <ClInclude Include="..\..\sources\TheRiseOfSuxalote\PowerUpMovement.h" />
-    <ClInclude Include="..\..\sources\TheRiseOfSuxalote\size.h" />
+    <ClInclude Include="..\..\sources\TheRiseOfSuxalote\progress_bar.h" />
+    <ClInclude Include="..\..\sources\TheRiseOfSuxalote\timer.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\sources\TheRiseOfSuxalote\cpp.hint" />

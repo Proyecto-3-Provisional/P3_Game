@@ -13,7 +13,7 @@ Game::Game()
 
 void prueba() {
 	std::cout << "Funciona el juego\n";
-
+}
 	// Crear un componente nuevo 
 	// Llegar al inputmanager, para detectar input
 	// Acceder al rigidbody, para meter AddForce
