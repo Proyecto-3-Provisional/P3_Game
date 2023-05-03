@@ -1,19 +1,20 @@
 #include "Game.h"
+#include "EngineInstances.h"
 #include <iostream>
 
-#include <EC/entity.h>
-#include <Input/input_manager.h>
-#include <Physics/rigidbody.h>
+namespace magma_game {
+	Game::Game()
+	{
+	}
 
+	std::string gameNameScene() {
+		std::cout << "Inicio del juego\n";
 
-Game::Game()
-{
+		return "assets/scenes/menu.magmascene";
 
+	}
+
+	/*void getEngineInstances(magma_engine::CMagmaEngine* engine) {
+		instances = engine;
+	}*/
 }
-
-void prueba() {
-	std::cout << "Funciona el juego\n";
-}
-	// Crear un componente nuevo 
-	// Llegar al inputmanager, para detectar input
-	// Acceder al rigidbody, para meter AddForce

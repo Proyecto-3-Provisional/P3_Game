@@ -8,6 +8,11 @@
 
 #include <EC/factory.h>
 
+namespace magma_engine
+{
+	class FactoryManager;
+}
+
 namespace magma_game
 {
 	struct magma_engine::Component;
@@ -36,6 +41,6 @@ namespace magma_game
 		magma_engine::Component* createComponent(magma_engine::Entity* e);
 	};
 
-	extern "C" SUXALOTE_API void setUpGameFactories();
+	extern "C" SUXALOTE_API void setUpGameFactories(magma_engine::FactoryManager* f);
 }
 

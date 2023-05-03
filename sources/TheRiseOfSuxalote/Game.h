@@ -4,13 +4,17 @@
 #define SUXALOTE_API __declspec(dllimport)
 #endif
 
-#include <EC/component.h>
+#include <string>
 
-class Rigidbody;
+namespace magma_engine {
+	class CMagmaEngine;
+}
 
-class SUXALOTE_API Game {
-public:
-	Game();
-};
-extern "C" SUXALOTE_API void prueba();
-
+namespace magma_game {
+	class SUXALOTE_API Game {
+	public:
+		Game();
+	};
+	extern "C" SUXALOTE_API std::string gameNameScene();
+	//extern "C" SUXALOTE_API void getEngineInstances(magma_engine::CMagmaEngine * engine);
+}
