@@ -1,4 +1,5 @@
 #include "Game.h"
+#include "EngineInstances.h"
 #include <iostream>
 
 namespace magma_game {
@@ -13,7 +14,8 @@ namespace magma_game {
 
 	}
 
-	/*void getEngineInstances(magma_engine::CMagmaEngine* engine) {
+
+	void getEngineInstances(magma_engine::CMagmaEngine* engine) {
 		instances = engine;
-	}*/
+	}
 }

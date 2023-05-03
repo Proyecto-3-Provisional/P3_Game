@@ -16,5 +16,5 @@ namespace magma_game {
 		Game();
 	};
 	extern "C" SUXALOTE_API std::string gameNameScene();
-	//extern "C" SUXALOTE_API void getEngineInstances(magma_engine::CMagmaEngine * engine);
+	extern "C" SUXALOTE_API void getEngineInstances(magma_engine::CMagmaEngine * engine);
 }
