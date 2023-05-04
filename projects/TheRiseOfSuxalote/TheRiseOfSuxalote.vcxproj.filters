@@ -18,7 +18,7 @@
     <ClCompile Include="..\..\sources\TheRiseOfSuxalote\dllmain.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\sources\TheRiseOfSuxalote\Game.cpp">
+    <ClCompile Include="..\..\sources\TheRiseOfSuxalote\game.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="..\..\sources\TheRiseOfSuxalote\PowerUpMovement.cpp">
@@ -47,7 +47,7 @@
     <ClInclude Include="..\..\sources\TheRiseOfSuxalote\framework.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\sources\TheRiseOfSuxalote\Game.h">
+    <ClInclude Include="..\..\sources\TheRiseOfSuxalote\game.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="..\..\sources\TheRiseOfSuxalote\PowerUpMovement.h">
@@ -66,9 +66,6 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="..\..\sources\TheRiseOfSuxalote\init_game_factories.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\sources\TheRiseOfSuxalote\EngineInstances.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="..\..\sources\TheRiseOfSuxalote\size_temp.h">

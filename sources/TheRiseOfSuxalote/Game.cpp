@@ -1,6 +1,6 @@
-#include "Game.h"
-
 #include <iostream>
+
+#include <TheRiseOfSuxalote/Game.h>
 
 namespace magma_game {
 	std::string gameNameScene() {
