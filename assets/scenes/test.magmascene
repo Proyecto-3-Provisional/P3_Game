@@ -22,10 +22,37 @@ entities = {
 		},
 		Rigidbody = {
 			mass = 1.0
-		}
-		
+		},
+		Size_Temp = {
+			size = 1.0
+		}		
 	},
-	
+	powerup = {
+		Transform = {
+			PositionX = -200,
+			PositionY = 200,
+			PositionZ = 4,
+			ScaleX = 50,
+			ScaleY = 50,
+			ScaleZ = 50
+		},
+		Mesh = {
+			entityName = "mesh_powerup",
+			mesh = "amongus.mesh",
+			material = "amongus_red",
+		},
+		Rigidbody = {
+			mass = 1.0
+		},
+		PowerUpComponent = {
+			Size = 0.2,
+			Vel = 50.0
+		},
+		EnemyController = {
+			enemySpeed = 75.0,
+			timeBetweenMovements = 1.0
+		}
+	},
 	cube = {
 		Transform = {
 			PositionX = 1.25,
