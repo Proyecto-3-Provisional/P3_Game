@@ -11,10 +11,6 @@ namespace magma_engine {
 }
 
 namespace magma_game {
-	class SUXALOTE_API Game {
-	public:
-		Game();
-	};
 	extern "C" SUXALOTE_API std::string gameNameScene();
 	extern "C" SUXALOTE_API void getEngineInstances(magma_engine::CMagmaEngine * engine);
 }

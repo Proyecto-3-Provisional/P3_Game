@@ -3,10 +3,6 @@
 #include <iostream>
 
 namespace magma_game {
-	Game::Game()
-	{
-	}
-
 	std::string gameNameScene() {
 		std::cout << "Inicio del juego\n";
 
