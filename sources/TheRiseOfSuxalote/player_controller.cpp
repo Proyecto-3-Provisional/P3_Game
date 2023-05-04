@@ -90,4 +90,9 @@ namespace magma_game
 		currTimeBetweenMovements -= deltaTime;
 
 	}
+
+	void PlayerController::setVelocity(float velocity)
+	{
+		speed = speed + velocity;
+	}
 }

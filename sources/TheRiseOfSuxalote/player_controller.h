@@ -15,6 +15,7 @@ namespace magma_game
 
 		virtual bool initComponent(std::map<std::string, std::string> args);
 		virtual bool start();
+		void setVelocity(float velocity);
 		void update(float deltaTime);
 
 	private:

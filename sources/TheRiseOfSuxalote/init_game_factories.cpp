@@ -7,6 +7,7 @@
 #include <TheRiseOfSuxalote/size_temp.h>
 #include <TheRiseOfSuxalote/progress_bar.h>
 #include <TheRiseOfSuxalote/timer.h>
+#include <TheRiseOfSuxalote/power_up.h>
 
 namespace magma_game
 {
@@ -35,6 +36,11 @@ namespace magma_game
 		return e->addComponent<Size_Temp>();
 	}
 
+	magma_engine::Component* PowerUpFactory::createComponent(magma_engine::Entity* e)
+	{
+		return e->addComponent<PowerUpComponent>();
+	}
+
 	void setUpGameFactories()
 	{
 		Singleton<magma_engine::FactoryManager>::instance()->addFactory("PlayerController", new PlayerControllerFactory());
@@ -42,6 +48,7 @@ namespace magma_game
 		Singleton<magma_engine::FactoryManager>::instance()->addFactory("ProgressBar", new ProgressBarFactory());
 		Singleton<magma_engine::FactoryManager>::instance()->addFactory("Timer", new TimerFactory());
 		Singleton<magma_engine::FactoryManager>::instance()->addFactory("Size_Temp", new SizeTempFactory());
+		Singleton<magma_engine::FactoryManager>::instance()->addFactory("PowerUpComponent", new PowerUpFactory());
 	}
 }
 

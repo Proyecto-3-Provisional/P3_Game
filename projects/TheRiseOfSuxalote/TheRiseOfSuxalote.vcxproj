@@ -176,6 +176,7 @@
     <ClCompile Include="..\..\sources\TheRiseOfSuxalote\init_game_factories.cpp" />
     <ClCompile Include="..\..\sources\TheRiseOfSuxalote\player_controller.cpp" />
     <ClCompile Include="..\..\sources\TheRiseOfSuxalote\PowerUpMovement.cpp" />
+    <ClCompile Include="..\..\sources\TheRiseOfSuxalote\power_up.cpp" />
     <ClCompile Include="..\..\sources\TheRiseOfSuxalote\progress_bar.cpp" />
     <ClCompile Include="..\..\sources\TheRiseOfSuxalote\size_temp.cpp" />
     <ClCompile Include="..\..\sources\TheRiseOfSuxalote\timer.cpp" />
@@ -187,6 +188,7 @@
     <ClInclude Include="..\..\sources\TheRiseOfSuxalote\init_game_factories.h" />
     <ClInclude Include="..\..\sources\TheRiseOfSuxalote\player_controller.h" />
     <ClInclude Include="..\..\sources\TheRiseOfSuxalote\PowerUpMovement.h" />
+    <ClInclude Include="..\..\sources\TheRiseOfSuxalote\power_up.h" />
     <ClInclude Include="..\..\sources\TheRiseOfSuxalote\progress_bar.h" />
     <ClInclude Include="..\..\sources\TheRiseOfSuxalote\size_temp.h" />
     <ClInclude Include="..\..\sources\TheRiseOfSuxalote\timer.h" />
