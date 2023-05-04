@@ -27,7 +27,7 @@ namespace magma_game
 		void setTam(float ntam);
 
 		float tam = 1.0f;
-		bool player = false;
+		bool isAPlayer = false;
 
 	private:
 		magma_engine::Transform* trPtr = nullptr;

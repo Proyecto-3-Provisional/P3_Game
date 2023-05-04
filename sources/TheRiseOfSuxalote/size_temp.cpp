@@ -4,7 +4,7 @@
 #include <EC/transform.h>
 #include "player_controller.h"
 
-magma_game::Size_Temp::Size_Temp() : tam(1.0f), player(false)
+magma_game::Size_Temp::Size_Temp() : tam(1.0f), isAPlayer(false)
 {
 }
 
@@ -33,7 +33,7 @@ bool magma_game::Size_Temp::start() {
 		return false;
 
 	originalScale = trPtr->getScale();
-	player = ent->hasComponent<PlayerController>();
+	isAPlayer = ent->hasComponent<PlayerController>();
 
 	trPtr->setScale(originalScale * tam);
 
@@ -47,7 +47,7 @@ void magma_game::Size_Temp::update(float deltaTime)
 		for (int i = 0; i < colEnts.size(); i++) {
 			if (colEnts[i]->hasComponent<Size_Temp>()) {
 				float otherS = colEnts[i]->getComponent<Size_Temp>()->getTam();
-				if (player || colEnts[i]->getComponent<Size_Temp>()->isPlayer()) {
+				if (isAPlayer || colEnts[i]->getComponent<Size_Temp>()->isPlayer()) {
 					if (otherS > tam) {
 						ent->setAlive(false);
 					}
@@ -63,7 +63,7 @@ void magma_game::Size_Temp::update(float deltaTime)
 					}
 					else {
 						//si tienen el mismo tamaño el jugador se lo come
-						if (player) {
+						if (isAPlayer) {
 							tam = tam + 0.2f;
 							trPtr->setScale(originalScale * tam);
 						}
@@ -84,7 +84,7 @@ float magma_game::Size_Temp::getTam()
 
 bool magma_game::Size_Temp::isPlayer()
 {
-	return player;
+	return isAPlayer;
 }
 
 void magma_game::Size_Temp::setTam(float ntam)

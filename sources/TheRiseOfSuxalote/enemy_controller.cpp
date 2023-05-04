@@ -29,10 +29,12 @@ namespace magma_game
 
 			magma_engine::Vector3D movementDirection(0, 0, 0);
 		}
-		catch (...) {
+		catch (std::exception& e) {
+			std::cout << "WARNING! - error en un componente enemy_controller:\n\n     " << e.what() << "\n\n";
+
 			return false;
 		}
-		return false;
+		return true;
 	}
 
 	void EnemyController::update(float deltaTime)
