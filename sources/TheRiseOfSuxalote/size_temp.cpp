@@ -1,8 +1,8 @@
-#include "size_temp.h"
-
 #include <Physics/rigidbody.h>
 #include <EC/transform.h>
-#include "player_controller.h"
+
+#include <TheRiseOfSuxalote/player_controller.h>
+#include <TheRiseOfSuxalote/size_temp.h>
 
 magma_game::Size_Temp::Size_Temp() : tam(1.0f), isAPlayer(false)
 {

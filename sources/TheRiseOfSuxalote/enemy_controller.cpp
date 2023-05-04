@@ -1,6 +1,7 @@
-#include "enemy_controller.h"
+#include <TheRiseOfSuxalote/enemy_controller.h>
 
 #include <Input/input_manager.h>
+
 #include <EC/entity.h>
 #include <EC/transform.h>
 

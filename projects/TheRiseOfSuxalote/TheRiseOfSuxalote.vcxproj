@@ -133,7 +133,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)MagmaEngine\sources;$(SolutionDir)MagmaEngine\dependencies\ogre\builds\x64\SDL2-2.24.1\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)sources;$(SolutionDir)MagmaEngine\sources;$(SolutionDir)MagmaEngine\dependencies\ogre\builds\x64\SDL2-2.24.1\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -154,7 +154,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)MagmaEngine\sources;$(SolutionDir)MagmaEngine\dependencies\ogre\builds\x64\SDL2-2.24.1\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)sources;$(SolutionDir)MagmaEngine\sources;$(SolutionDir)MagmaEngine\dependencies\ogre\builds\x64\SDL2-2.24.1\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -172,7 +172,7 @@
   <ItemGroup>
     <ClCompile Include="..\..\sources\TheRiseOfSuxalote\dllmain.cpp" />
     <ClCompile Include="..\..\sources\TheRiseOfSuxalote\enemy_controller.cpp" />
-    <ClCompile Include="..\..\sources\TheRiseOfSuxalote\Game.cpp" />
+    <ClCompile Include="..\..\sources\TheRiseOfSuxalote\game.cpp" />
     <ClCompile Include="..\..\sources\TheRiseOfSuxalote\init_game_factories.cpp" />
     <ClCompile Include="..\..\sources\TheRiseOfSuxalote\player_controller.cpp" />
     <ClCompile Include="..\..\sources\TheRiseOfSuxalote\PowerUpMovement.cpp" />
@@ -183,7 +183,7 @@
   <ItemGroup>
     <ClInclude Include="..\..\sources\TheRiseOfSuxalote\enemy_controller.h" />
     <ClInclude Include="..\..\sources\TheRiseOfSuxalote\framework.h" />
-    <ClInclude Include="..\..\sources\TheRiseOfSuxalote\Game.h" />
+    <ClInclude Include="..\..\sources\TheRiseOfSuxalote\game.h" />
     <ClInclude Include="..\..\sources\TheRiseOfSuxalote\init_game_factories.h" />
     <ClInclude Include="..\..\sources\TheRiseOfSuxalote\player_controller.h" />
     <ClInclude Include="..\..\sources\TheRiseOfSuxalote\PowerUpMovement.h" />

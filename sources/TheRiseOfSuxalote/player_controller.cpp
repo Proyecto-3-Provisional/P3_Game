@@ -1,9 +1,9 @@
-#include "player_controller.h"
-
 #include <Input/input_manager.h>
+
 #include <EC/entity.h>
 #include <EC/transform.h>
 
+#include <TheRiseOfSuxalote/player_controller.h>
 
 namespace magma_game
 {

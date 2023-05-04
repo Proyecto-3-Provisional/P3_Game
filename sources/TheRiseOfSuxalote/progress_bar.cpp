@@ -1,4 +1,4 @@
-#include "progress_bar.h"
+#include <TheRiseOfSuxalote/progress_bar.h>
 
 #include <Render/render_manager.h>
 #include <Render/ui_progress_bar.h>

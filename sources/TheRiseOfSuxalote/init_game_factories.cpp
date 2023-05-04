@@ -1,13 +1,12 @@
-#include "init_game_factories.h"
-
 #include <EC/factory_manager.h>
 #include <EC/entity.h>
 
-#include "player_controller.h"
-#include "enemy_controller.h"
-#include "progress_bar.h"
-#include "size_temp.h"
-#include "timer.h"
+#include <TheRiseOfSuxalote/init_game_factories.h>
+#include <TheRiseOfSuxalote/enemy_controller.h>
+#include <TheRiseOfSuxalote/player_controller.h>
+#include <TheRiseOfSuxalote/size_temp.h>
+#include <TheRiseOfSuxalote/progress_bar.h>
+#include <TheRiseOfSuxalote/timer.h>
 
 namespace magma_game
 {
@@ -43,7 +42,6 @@ namespace magma_game
 		Singleton<magma_engine::FactoryManager>::instance()->addFactory("ProgressBar", new ProgressBarFactory());
 		Singleton<magma_engine::FactoryManager>::instance()->addFactory("Timer", new TimerFactory());
 		Singleton<magma_engine::FactoryManager>::instance()->addFactory("Size_Temp", new SizeTempFactory());
-
 	}
 }
 
