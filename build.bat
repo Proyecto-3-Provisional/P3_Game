@@ -2,10 +2,14 @@
 cd MagmaEngine
 
 :: Construimos las dependencias del motor
-call buildEngine.bat
+call build.bat
+
+mkdir .\executables\assets
 
 :: Volvemos al directorio del juego
 cd ..
+
+xcopy assets .\MagmaEngine\executables\assets /E
 
 :: COMPILAR LA SOLUCIÓN DEL JUEGO ::
 msbuild .\TheRiseOfSuxalote.sln -p:Configuration=Debug -noLogo -verbosity:minimal -maxCpuCount

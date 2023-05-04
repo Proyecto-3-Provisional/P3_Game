@@ -1,7 +1,7 @@
 :: Nos colocamos en el directorio del motor
 cd MagmaEngine
 
-call cleanEngine.bat
+call clean.bat
 
 cd ..
 
