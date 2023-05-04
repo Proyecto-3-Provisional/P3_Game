@@ -6,7 +6,7 @@
 
 namespace magma_game
 {
-	EnemyController::EnemyController() : enemySpeed(0.0f), timeBetweenMovements(0.0f), currTimeBetweenMovements(0.0f), chasing(true)
+	EnemyController::EnemyController() : enemySpeed(0.0f), timeBetweenMovements(0.0f), currTimeBetweenMovements(0.0f)
 	{
 	}
 
@@ -15,19 +15,11 @@ namespace magma_game
 
 	}
 
-	bool EnemyController::initComponent(magma_engine::Transform* playerTransform_, float enemySpeed_, float timeBetweenMovements_, bool chasing_)
+	bool EnemyController::initComponent(std::map<std::string, std::string> args)
 	{
 		try {
-			rb = ent->getComponent<magma_engine::Rigidbody>();
-			tr = ent->getComponent<magma_engine::Transform>();
-			playerTransform = playerTransform_;
-			chasing = chasing_;
-
-			enemySpeed = enemySpeed_;
-			timeBetweenMovements = timeBetweenMovements_;
-			currTimeBetweenMovements = timeBetweenMovements;
-
-			magma_engine::Vector3D movementDirection(0, 0, 0);
+			enemySpeed = stof(args["enemySpeed"]);
+			timeBetweenMovements = stof(args["timeBetweenMovements"]);
 		}
 		catch (std::exception& e) {
 			std::cout << "WARNING! - error en un componente enemy_controller:\n\n     " << e.what() << "\n\n";
@@ -37,32 +29,50 @@ namespace magma_game
 		return true;
 	}
 
+	bool EnemyController::start()
+	{
+		currTimeBetweenMovements = timeBetweenMovements;
+		rb = ent->getComponent<magma_engine::Rigidbody>();
+		tr = ent->getComponent<magma_engine::Transform>();
+		return (tr != nullptr && rb != nullptr);
+	}
+
 	void EnemyController::update(float deltaTime)
 	{
 		bool move = false;
 
-		magma_engine::Vector3D lineToPlayer = playerTransform->getPos() - tr->getPos();
-
-		if (currTimeBetweenMovements < 0.0f) {
-
-			if (chasing) {
-				rb->addForce(lineToPlayer.normalize() * enemySpeed * deltaTime);
-			}
-			else {
-				rb->addForce(lineToPlayer.normalize() * -1 * enemySpeed * deltaTime);
-
-			}
+		if (currTimeBetweenMovements <= 0) {
+			roamBehavior();
 			currTimeBetweenMovements = timeBetweenMovements;
-			
 		}
 
-		if(chasing)
-			tr->setDirection(lineToPlayer);
-		else
-			tr->setDirection(lineToPlayer * -1);
-
-
 		currTimeBetweenMovements -= deltaTime;
+	}
 
+	void EnemyController::roamBehavior()
+	{
+		int r = rand() % 4;
+		
+		switch (r)
+		{
+		case 0:
+			rb->addForce(magma_engine::Vector3D{1,0,0} * enemySpeed);
+			break;
+
+		case 1:
+			rb->addForce(magma_engine::Vector3D{ -1,0,0 } *enemySpeed);
+			break;
+
+		case 2:
+			rb->addForce(magma_engine::Vector3D{ 0,0,1 } *enemySpeed);
+			break;
+
+		case 3:
+			rb->addForce(magma_engine::Vector3D{ 0,0,-1 } *enemySpeed);
+			break;
+
+		default:
+			break;
+		}
 	}
 }

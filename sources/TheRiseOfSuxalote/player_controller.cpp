@@ -7,7 +7,7 @@
 
 namespace magma_game
 {
-	PlayerController::PlayerController() : enemySpeed(0.0f), timeBetweenMovements(0.0f), currTimeBetweenMovements(0.0f)
+	PlayerController::PlayerController() : speed(0.0f), timeBetweenMovements(0.0f), currTimeBetweenMovements(0.0f)
 	{
 	}
 
@@ -19,7 +19,7 @@ namespace magma_game
 	bool PlayerController::initComponent(std::map<std::string, std::string> args)
 	{
 		try {
-			enemySpeed = stof(args["playerSpeed"]);
+			speed = stof(args["playerSpeed"]);
 			timeBetweenMovements = stof(args["timeBetweenMovements"]);
 			currTimeBetweenMovements = stof(args["timeBetweenMovements"]); ;
 
@@ -48,14 +48,14 @@ namespace magma_game
 
 			if (Singleton<magma_engine::InputManager>::instance()->isKeyDown(SCANCODE_A)) {
 
-				rb->addForce(magma_engine::Vector3D(-1, 0, 0) * enemySpeed);
+				rb->addForce(magma_engine::Vector3D(-1, 0, 0) * speed);
 				movementDirection += magma_engine::Vector3D(-1, 0, 0);
 				move = true;
 			}
 		
 			if (Singleton<magma_engine::InputManager>::instance()->isKeyDown(SCANCODE_D)) {
 
-				rb->addForce(magma_engine::Vector3D(1, 0, 0) * enemySpeed);
+				rb->addForce(magma_engine::Vector3D(1, 0, 0) * speed);
 				movementDirection += magma_engine::Vector3D(1, 0, 0);
 
 				move = true;
@@ -64,7 +64,7 @@ namespace magma_game
 
 			if (Singleton<magma_engine::InputManager>::instance()->isKeyDown(SCANCODE_W)) {
 
-				rb->addForce(magma_engine::Vector3D(0, 0, -1) * enemySpeed);
+				rb->addForce(magma_engine::Vector3D(0, 0, -1) * speed);
 				movementDirection += magma_engine::Vector3D(0, 0, -1);
 
 				move = true;
@@ -73,7 +73,7 @@ namespace magma_game
 
 			if (Singleton<magma_engine::InputManager>::instance()->isKeyDown(SCANCODE_S)) {
 
-				rb->addForce(magma_engine::Vector3D(0, 0, 1) * enemySpeed);
+				rb->addForce(magma_engine::Vector3D(0, 0, 1) * speed);
 				movementDirection += magma_engine::Vector3D(0, 0, 1);
 
 				move = true;

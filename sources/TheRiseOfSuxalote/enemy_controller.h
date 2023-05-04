@@ -13,20 +13,18 @@ namespace magma_game
 		EnemyController();
 		~EnemyController();
 
-		bool initComponent(magma_engine::Transform* playerTransform_, float playerSpeed_ = 10000.0f, float timeBetweenMovements_ = 2.0f, bool chasing_ = true);
+		virtual bool initComponent(std::map<std::string, std::string> args);
+		virtual bool start();
+
 		void update(float deltaTime);
 
+		void roamBehavior();
 
 	private:
 		magma_engine::Rigidbody* rb = nullptr;
 		magma_engine::Transform* tr = nullptr;
-		magma_engine::Transform* playerTransform = nullptr;
+
 		float enemySpeed;
-
-		magma_engine::Vector3D movementDirection;
-
-		// true para perseguir al jugador, false para huir
-		bool chasing;
 
 		float timeBetweenMovements;
 		float currTimeBetweenMovements;

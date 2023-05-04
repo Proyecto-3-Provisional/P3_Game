@@ -20,7 +20,7 @@ namespace magma_game
 	private:
 		magma_engine::Rigidbody* rb = nullptr;
 		magma_engine::Transform* tr = nullptr;
-		float enemySpeed;
+		float speed;
 
 		magma_engine::Vector3D movementDirection;
 		//simula al ajolote nadando a "empujones"
