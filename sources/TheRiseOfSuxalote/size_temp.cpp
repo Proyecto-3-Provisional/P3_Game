@@ -15,7 +15,7 @@ magma_game::Size_Temp::~Size_Temp()
 bool magma_game::Size_Temp::initComponent(std::map<std::string, std::string> args)
 {
 	try {
-		tam = stof(args["Size"]);
+		tam = stof(args["size"]);
 	}
 	catch (std::exception& e) {
 		std::cout << "WARNING! - error en un componente size_temp:\n\n     " << e.what() << "\n\n";
@@ -34,6 +34,8 @@ bool magma_game::Size_Temp::start() {
 
 	originalScale = trPtr->getScale();
 	player = ent->hasComponent<PlayerController>();
+
+	trPtr->setScale(originalScale * tam);
 
 	return true;
 }

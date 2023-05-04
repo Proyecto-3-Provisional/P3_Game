@@ -80,7 +80,7 @@ namespace magma_game
 
 			}
 
-			if (move) {
+			if (move && movementDirection.magnitude() != 0) {
 				tr->setDirection(movementDirection);
 				currTimeBetweenMovements = timeBetweenMovements;
 			}
