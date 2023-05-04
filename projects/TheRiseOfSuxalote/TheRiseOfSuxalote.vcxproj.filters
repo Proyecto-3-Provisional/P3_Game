@@ -39,6 +39,9 @@
     <ClCompile Include="..\..\sources\TheRiseOfSuxalote\init_game_factories.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\sources\TheRiseOfSuxalote\size_temp.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\sources\TheRiseOfSuxalote\framework.h">
@@ -63,6 +66,12 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="..\..\sources\TheRiseOfSuxalote\init_game_factories.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sources\TheRiseOfSuxalote\EngineInstances.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sources\TheRiseOfSuxalote\size_temp.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

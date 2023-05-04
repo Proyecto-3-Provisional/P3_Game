@@ -6,6 +6,7 @@
 #include "player_controller.h"
 #include "enemy_controller.h"
 #include "progress_bar.h"
+#include "size_temp.h"
 #include "timer.h"
 
 namespace magma_game
@@ -30,12 +31,19 @@ namespace magma_game
 		return e->addComponent<EnemyController>();
 	}
 
+	magma_engine::Component* SizeTempFactory::createComponent(magma_engine::Entity* e)
+	{
+		return e->addComponent<Size_Temp>();
+	}
+
 	void setUpGameFactories()
 	{
 		Singleton<magma_engine::FactoryManager>::instance()->addFactory("PlayerController", new PlayerControllerFactory());
 		Singleton<magma_engine::FactoryManager>::instance()->addFactory("EnemyController", new EnemyControllerFactory());
 		Singleton<magma_engine::FactoryManager>::instance()->addFactory("ProgressBar", new ProgressBarFactory());
 		Singleton<magma_engine::FactoryManager>::instance()->addFactory("Timer", new TimerFactory());
+		Singleton<magma_engine::FactoryManager>::instance()->addFactory("Size_Temp", new SizeTempFactory());
+
 	}
 }
 
