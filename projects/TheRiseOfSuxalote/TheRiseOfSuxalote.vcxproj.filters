@@ -65,9 +65,6 @@
     <ClInclude Include="..\..\sources\TheRiseOfSuxalote\init_game_factories.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\sources\TheRiseOfSuxalote\EngineInstances.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\sources\TheRiseOfSuxalote\cpp.hint" />

@@ -181,7 +181,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\sources\TheRiseOfSuxalote\enemy_controller.h" />
-    <ClInclude Include="..\..\sources\TheRiseOfSuxalote\EngineInstances.h" />
     <ClInclude Include="..\..\sources\TheRiseOfSuxalote\framework.h" />
     <ClInclude Include="..\..\sources\TheRiseOfSuxalote\Game.h" />
     <ClInclude Include="..\..\sources\TheRiseOfSuxalote\init_game_factories.h" />

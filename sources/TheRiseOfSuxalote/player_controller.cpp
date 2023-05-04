@@ -1,5 +1,5 @@
 #include "player_controller.h"
-#include "EngineInstances.h"
+
 #include <Input/input_manager.h>
 #include <EC/entity.h>
 #include <EC/transform.h>
@@ -45,14 +45,14 @@ namespace magma_game
 		if (currTimeBetweenMovements < 0.0f) {
 			movementDirection = { 0,0,0 };
 
-			if (instances->getInput()->isKeyDown(SCANCODE_A)) {
+			if (Singleton<magma_engine::InputManager>::instance()->isKeyDown(SCANCODE_A)) {
 
 				rb->addForce(magma_engine::Vector3D(-1, 0, 0) * enemySpeed);
 				movementDirection += magma_engine::Vector3D(-1, 0, 0);
 				move = true;
 			}
 		
-			if (instances->getInput()->isKeyDown(SCANCODE_D)) {
+			if (Singleton<magma_engine::InputManager>::instance()->isKeyDown(SCANCODE_D)) {
 
 				rb->addForce(magma_engine::Vector3D(1, 0, 0) * enemySpeed);
 				movementDirection += magma_engine::Vector3D(1, 0, 0);
@@ -61,7 +61,7 @@ namespace magma_game
 
 			}
 
-			if (instances->getInput()->isKeyDown(SCANCODE_W)) {
+			if (Singleton<magma_engine::InputManager>::instance()->isKeyDown(SCANCODE_W)) {
 
 				rb->addForce(magma_engine::Vector3D(0, 0, -1) * enemySpeed);
 				movementDirection += magma_engine::Vector3D(0, 0, -1);
@@ -70,7 +70,7 @@ namespace magma_game
 
 			}
 
-			if (instances->getInput()->isKeyDown(SCANCODE_S)) {
+			if (Singleton<magma_engine::InputManager>::instance()->isKeyDown(SCANCODE_S)) {
 
 				rb->addForce(magma_engine::Vector3D(0, 0, 1) * enemySpeed);
 				movementDirection += magma_engine::Vector3D(0, 0, 1);

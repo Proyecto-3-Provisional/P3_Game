@@ -41,6 +41,6 @@ namespace magma_game
 		magma_engine::Component* createComponent(magma_engine::Entity* e);
 	};
 
-	extern "C" SUXALOTE_API void setUpGameFactories(magma_engine::FactoryManager* f);
+	extern "C" SUXALOTE_API void setUpGameFactories();
 }
 

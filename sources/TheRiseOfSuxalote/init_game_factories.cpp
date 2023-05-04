@@ -30,12 +30,12 @@ namespace magma_game
 		return e->addComponent<EnemyController>();
 	}
 
-	void setUpGameFactories(magma_engine::FactoryManager* f)
+	void setUpGameFactories()
 	{
-		f->addFactory("PlayerController", new PlayerControllerFactory());
-		f->addFactory("EnemyController", new EnemyControllerFactory());
-		f->addFactory("ProgressBar", new ProgressBarFactory());
-		f->addFactory("Timer", new TimerFactory());
+		Singleton<magma_engine::FactoryManager>::instance()->addFactory("PlayerController", new PlayerControllerFactory());
+		Singleton<magma_engine::FactoryManager>::instance()->addFactory("EnemyController", new EnemyControllerFactory());
+		Singleton<magma_engine::FactoryManager>::instance()->addFactory("ProgressBar", new ProgressBarFactory());
+		Singleton<magma_engine::FactoryManager>::instance()->addFactory("Timer", new TimerFactory());
 	}
 }
 

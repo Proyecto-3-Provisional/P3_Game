@@ -1,5 +1,5 @@
 #include "progress_bar.h"
-#include "EngineInstances.h"
+
 #include <Render/render_manager.h>
 #include <Render/ui_progress_bar.h>
 #include <Render/ui_manager.h>
@@ -33,14 +33,14 @@ namespace magma_game
 		progress = pro;
 		limit = proLimit;
 
-		screenWidth = (float)instances->getRender()->getWinWidth();
-		screenHeight = (float)instances->getRender()->getWinHeight();
+		screenWidth = (float)Singleton<magma_engine::RenderManager>::instance()->getWinWidth();
+		screenHeight = (float)Singleton<magma_engine::RenderManager>::instance()->getWinHeight();
 		return true; 
 	}
 
 	bool Progress_Bar::start()
 	{
-		progressBar = instances->getUI()->createElement<magma_engine::UI_Progress_Bar>(
+		progressBar = Singleton<magma_engine::UI_Manager>::instance()->createElement<magma_engine::UI_Progress_Bar>(
 				imageName, normalName, posX, posY, tamX, tamY);
 
 		progressBar->setPanelPosition(posX, posY);
@@ -63,8 +63,8 @@ namespace magma_game
 
 	void Progress_Bar::update(float deltaTime)
 	{
-		float newWidth = (float)instances->getRender()->getWinWidth();
-		float newHeight = (float)instances->getRender()->getWinHeight();
+		float newWidth = (float)Singleton<magma_engine::RenderManager>::instance()->getWinWidth();
+		float newHeight = (float)Singleton<magma_engine::RenderManager>::instance()->getWinHeight();
 
 		if (newWidth != 0 && newHeight != 0 && screenWidth != 0 && screenHeight != 0)
 			progressBar->setPanelPosition(posX * (newWidth / screenWidth), posY * (newHeight / screenHeight));
