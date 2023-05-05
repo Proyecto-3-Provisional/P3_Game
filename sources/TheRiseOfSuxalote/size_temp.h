@@ -10,6 +10,7 @@ namespace magma_engine {
 
 namespace magma_game
 {
+	class Progress_Bar;
 
 	class Size_Temp : public magma_engine::Component
 	{
@@ -32,6 +33,7 @@ namespace magma_game
 	private:
 		magma_engine::Transform* trPtr = nullptr;
 		magma_engine::Rigidbody* rbPtr = nullptr;
+		Progress_Bar* prBarPtr = nullptr;
 		magma_engine::Vector3D originalScale;
 	};
 }

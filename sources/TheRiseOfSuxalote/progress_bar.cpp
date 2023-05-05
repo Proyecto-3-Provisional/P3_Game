@@ -1,12 +1,15 @@
 #include <TheRiseOfSuxalote/progress_bar.h>
-
 #include <Render/render_manager.h>
 #include <Render/ui_progress_bar.h>
 #include <Render/ui_manager.h>
 
+#include <Sounds/sound_manager.h>
+
+#include <iostream>
+
 namespace magma_game
 {
-	Progress_Bar::Progress_Bar() : Component(), progressBar(nullptr), interactive(true), screenHeight(1.0f), screenWidth(1.0f), imageName(), normalName(), tamX(), tamY(), posX(), posY(), progress(), limit()
+	Progress_Bar::Progress_Bar() : progressBar(nullptr), interactive(true), imageName(), normalName(), tamX(), tamY(), posX(), posY(), progress(), limit()
 	{
 
 	}
@@ -18,30 +21,33 @@ namespace magma_game
 		return imageName;
 	}
 
-	bool Progress_Bar::initComponent(std::string overlayName, std::string name,
-		float width, float height, float x, float y, float pro, float proLimit) 
-	{ 
-		imageName = overlayName;
-		normalName = name;
+	bool Progress_Bar::initComponent(std::map<std::string, std::string> args)
+	{
+		try {
+			imageName = args["imageName"];
+			normalName = args["normalName"];
 
-		tamX = width;
-		tamY = height;
+			tamX = stof(args["width"]);
+			tamY = stof(args["height"]);
 
-		posX = x;
-		posY = y;
+			posX = stof(args["x"]);
+			posY = stof(args["y"]);
 
-		progress = pro;
-		limit = proLimit;
+			progress = stof(args["progress"]);
+			limit = stof(args["limit"]);
+		}
+		catch (std::exception& e) {
+			std::cout << "WARNING! - error en un componente enemy_controller:\n\n     " << e.what() << "\n\n";
 
-		screenWidth = (float)Singleton<magma_engine::RenderManager>::instance()->getWinWidth();
-		screenHeight = (float)Singleton<magma_engine::RenderManager>::instance()->getWinHeight();
-		return true; 
+			return false;
+		}
+		return true;
 	}
 
 	bool Progress_Bar::start()
 	{
 		progressBar = Singleton<magma_engine::UI_Manager>::instance()->createElement<magma_engine::UI_Progress_Bar>(
-				imageName, normalName, posX, posY, tamX, tamY);
+			imageName, normalName, posX, posY, tamX, tamY);
 
 		progressBar->setPanelPosition(posX, posY);
 		progressBar->setPanelSize(tamX, tamY);
@@ -63,13 +69,7 @@ namespace magma_game
 
 	void Progress_Bar::update(float deltaTime)
 	{
-		float newWidth = (float)Singleton<magma_engine::RenderManager>::instance()->getWinWidth();
-		float newHeight = (float)Singleton<magma_engine::RenderManager>::instance()->getWinHeight();
-
-		if (newWidth != 0 && newHeight != 0 && screenWidth != 0 && screenHeight != 0)
-			progressBar->setPanelPosition(posX * (newWidth / screenWidth), posY * (newHeight / screenHeight));
-
-		progressBar->setPanelSize(tamX * (progress / limit) * (newWidth / screenWidth), (newHeight / screenHeight) * tamY);
+		progressBar->setPanelSize(tamX * (progress / limit), tamY);
 	}
 
 	void Progress_Bar::setInteractive(bool interact)
@@ -79,17 +79,17 @@ namespace magma_game
 
 	void Progress_Bar::setProgress(float pro)
 	{
-		float maxLimit = limit * 10; 
+		float maxLimit = limit * 10;
 
 		if (pro <= maxLimit)
 			progress = pro;
 		else
-			progress = maxLimit; 
+			progress = maxLimit;
 	}
 
 	void Progress_Bar::setProgressLimit(float proLimit)
 	{
-		limit = proLimit; 
+		limit = proLimit;
 	}
 }
 

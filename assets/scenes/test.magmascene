@@ -25,7 +25,17 @@ entities = {
 		},
 		Size_Temp = {
 			size = 1.0
-		}		
+		},
+		ProgressBar = {
+			imageName = "bar_background",
+			normalName = "bar_background",
+			width = 3000,
+			height = 70,
+			x = 110,
+			y = 0,
+			progress = 0, 
+			limit = 5,
+		}
 	},
 	powerup = {
 		Transform = {

@@ -1,6 +1,6 @@
 #include <Physics/rigidbody.h>
 #include <EC/transform.h>
-
+#include <TheRiseOfSuxalote/progress_bar.h>
 #include <TheRiseOfSuxalote/player_controller.h>
 #include <TheRiseOfSuxalote/size_temp.h>
 
@@ -32,6 +32,19 @@ bool magma_game::Size_Temp::start() {
 	if (trPtr == nullptr || rbPtr == nullptr)
 		return false;
 
+	prBarPtr = ent->getComponent<Progress_Bar>();
+
+	if (prBarPtr != nullptr)
+	{
+		prBarPtr->setProgress(tam);
+		// establecer maxTam en barra progreso
+	}
+	else
+	{
+		std::cout << "WARNING! No hay progress bar en Size_temp \n\n";
+		return false;
+	}
+	
 	originalScale = trPtr->getScale();
 	isAPlayer = ent->hasComponent<PlayerController>();
 
@@ -66,6 +79,9 @@ void magma_game::Size_Temp::update(float deltaTime)
 						if (isAPlayer) {
 							tam = tam + 0.2f;
 							trPtr->setScale(originalScale * tam);
+							
+							if (prBarPtr != nullptr)
+								prBarPtr->setProgress(tam);
 						}
 						else {
 							ent->setAlive(false);

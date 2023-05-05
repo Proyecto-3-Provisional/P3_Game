@@ -2,12 +2,13 @@
 
 #include <EC/component.h>
 
-namespace magma_engine {
+namespace magma_engine
+{
 	class UI_Progress_Bar;
 }
 
-namespace magma_game
-{
+namespace magma_game {
+
 	class Progress_Bar : public magma_engine::Component
 	{
 	public:
@@ -16,8 +17,7 @@ namespace magma_game
 		Progress_Bar();
 		virtual ~Progress_Bar();
 
-		virtual bool initComponent(std::string overlayName, std::string name,
-			float width, float height, float x, float y, float pro, float proLimit);
+		virtual bool initComponent(std::map<std::string, std::string> args);
 
 		virtual void render() {};
 
@@ -40,8 +40,8 @@ namespace magma_game
 		void setInteractive(bool interactive);
 
 		//Metodos para modificar el valor del progreso actual y el limite
-		void setProgress(float pro); 
-		void setProgressLimit(float proLimit); 
+		void setProgress(float pro);
+		void setProgressLimit(float proLimit);
 
 	private:
 
@@ -56,16 +56,16 @@ namespace magma_game
 		bool interactive;
 
 		//Variable del progreso actual y el final 
-		float progress; 
-		float limit; 
+		float progress;
+		float limit;
+
+		int musical;
 
 		//Variables de tamaño, posicion y tamaño de pantalla
 		float tamX;
 		float tamY;
 		float posX;
 		float posY;
-		float screenHeight;
-		float screenWidth;
 	};
 }
 
