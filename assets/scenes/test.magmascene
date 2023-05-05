@@ -27,14 +27,22 @@ entities = {
 			size = 1.0
 		},
 		ProgressBar = {
-			imageName = "bar_background",
-			normalName = "bar_background",
-			width = 3000,
-			height = 70,
+			imageName = "lava",
+			normalName = "lava",
+			width = 110,
+			height = 90,
 			x = 110,
 			y = 0,
 			progress = 0, 
 			limit = 5,
+		},
+		Image = {
+			overlayName = "backgroundPrueba",
+			name = "bar_background",
+			width = 600,
+			height = 70,
+			x = 110,
+			y = 0
 		},
 		Endgame = {
 			winRoute = "assets/scenes/win.magmascene",

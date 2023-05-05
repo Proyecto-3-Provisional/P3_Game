@@ -38,6 +38,7 @@ bool magma_game::Size_Temp::start() {
 		if (prBarPtr != nullptr)
 		{
 			prBarPtr->setProgress(tam);
+			prBarPtr->setProgressLimit(maxTam);
 			// establecer maxTam en barra progreso
 		}
 		else
@@ -71,7 +72,11 @@ void magma_game::Size_Temp::update(float deltaTime)
 				else
 				{
 					colEnts[i]->setAlive(false);
-
+					if (prBarPtr != nullptr)
+					{
+						prBarPtr->setProgress(tam);
+					}
+					
 					tam += 2.0f;
 
 					if (tam >= maxTam)
