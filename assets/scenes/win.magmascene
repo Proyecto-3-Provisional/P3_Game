@@ -31,7 +31,7 @@ entities = {
 			textCont = "You WIN",
 			width = 60,
 			height = 60,
-			x = 300,
+			x = 500,
 			y = 200,
 			r = 1,
 			g = 1,
@@ -39,7 +39,7 @@ entities = {
 		}
 	}, 
 
-	buttonStart = 
+	buttonBack = 
 	{
 		Button = {
 			overlayName = "buttonPruebaEndWin",
@@ -51,7 +51,7 @@ entities = {
 			width = 300,
 			height = 80,
 			x = 500,
-			y = 300
+			y = 500
 		}, 
 		Text = {
 			overlayName = "textilloEndWin",
@@ -60,8 +60,8 @@ entities = {
 			textCont = "Menu",
 			width = 30,
 			height = 60,
-			x = 590,
-			y = 310,
+			x = 575,
+			y = 515,
 			r = 0,
 			g = 0,
 			b = 0

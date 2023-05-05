@@ -6,6 +6,7 @@
 namespace magma_engine {
 	class Transform;
 	class Rigidbody;
+	class AudioSource;
 }
 
 namespace magma_game
@@ -33,6 +34,7 @@ namespace magma_game
 	private:
 		magma_engine::Transform* trPtr = nullptr;
 		magma_engine::Rigidbody* rbPtr = nullptr;
+		magma_engine::AudioSource* audioPtr = nullptr;
 		Progress_Bar* prBarPtr = nullptr;
 		magma_engine::Vector3D originalScale;
 	};

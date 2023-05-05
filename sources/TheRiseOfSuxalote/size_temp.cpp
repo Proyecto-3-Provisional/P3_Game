@@ -1,5 +1,6 @@
 #include <Physics/rigidbody.h>
 #include <EC/transform.h>
+#include <Sounds/audio_source.h>
 #include <TheRiseOfSuxalote/progress_bar.h>
 #include <TheRiseOfSuxalote/player_controller.h>
 #include <TheRiseOfSuxalote/size_temp.h>
@@ -29,6 +30,7 @@ bool magma_game::Size_Temp::start() {
 
 	trPtr = ent->getComponent<magma_engine::Transform>();
 	rbPtr = ent->getComponent<magma_engine::Rigidbody>();
+	audioPtr = ent->getComponent<magma_engine::AudioSource>();
 
 	if (trPtr == nullptr || rbPtr == nullptr)
 		return false;
@@ -71,13 +73,15 @@ void magma_game::Size_Temp::update(float deltaTime)
 				}
 				else
 				{
+					if(audioPtr != nullptr) audioPtr->playSong();
+
 					colEnts[i]->setAlive(false);
 					if (prBarPtr != nullptr)
 					{
 						prBarPtr->setProgress(tam);
 					}
 					
-					tam += 2.0f;
+					tam += 0.2f;
 
 					if (tam >= maxTam)
 					{

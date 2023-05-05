@@ -26,6 +26,13 @@ entities = {
 		Size_Temp = {
 			size = 1.0
 		},
+		AudioSource = {
+			path = "eat.wav",
+			vol = 50,
+			channel = 4,
+			loop = 0,
+			start = 0
+		},
 		ProgressBar = {
 			imageName = "lava",
 			normalName = "lava",
@@ -50,17 +57,17 @@ entities = {
 		}		
 	},
 	
-	powerup = {
+	enemy = {
 		Transform = {
 			PositionX = -200,
 			PositionY = 200,
 			PositionZ = 4,
-			ScaleX = 50,
-			ScaleY = 50,
-			ScaleZ = 50
+			ScaleX = 80,
+			ScaleY = 80,
+			ScaleZ = 80
 		},
 		Mesh = {
-			entityName = "mesh_powerup2",
+			entityName = "mesh_enemy1",
 			mesh = "amongus.mesh",
 			material = "amongus_red",
 		},
@@ -68,7 +75,33 @@ entities = {
 			mass = 1.0
 		},
 		Size_Temp = {
-			size = 2.0
+			size = 0.7
+		},
+		EnemyController = {
+			enemySpeed = 75.0,
+			timeBetweenMovements = 1.0
+		}
+	},
+	
+	enemy2 = {
+		Transform = {
+			PositionX = 300,
+			PositionY = 200,
+			PositionZ = 4,
+			ScaleX = 80,
+			ScaleY = 80,
+			ScaleZ = 80
+		},
+		Mesh = {
+			entityName = "mesh_enemy2",
+			mesh = "amongus.mesh",
+			material = "amongus_red",
+		},
+		Rigidbody = {
+			mass = 1.0
+		},
+		Size_Temp = {
+			size = 0.7
 		},
 		EnemyController = {
 			enemySpeed = 75.0,
