@@ -59,9 +59,9 @@ entities = {
 	
 	enemy = {
 		Transform = {
-			PositionX = -200,
+			PositionX = -300,
 			PositionY = 200,
-			PositionZ = 4,
+			PositionZ = 0,
 			ScaleX = 80,
 			ScaleY = 80,
 			ScaleZ = 80
@@ -87,7 +87,7 @@ entities = {
 		Transform = {
 			PositionX = 300,
 			PositionY = 200,
-			PositionZ = 4,
+			PositionZ = 0,
 			ScaleX = 80,
 			ScaleY = 80,
 			ScaleZ = 80
@@ -102,6 +102,110 @@ entities = {
 		},
 		Size_Temp = {
 			size = 0.7
+		},
+		EnemyController = {
+			enemySpeed = 75.0,
+			timeBetweenMovements = 1.0
+		}
+	},
+	
+	enemy3 = {
+		Transform = {
+			PositionX = 300,
+			PositionY = 200,
+			PositionZ = 300,
+			ScaleX = 80,
+			ScaleY = 80,
+			ScaleZ = 80
+		},
+		Mesh = {
+			entityName = "mesh_enemy3",
+			mesh = "amongus.mesh",
+			material = "amongus_red",
+		},
+		Rigidbody = {
+			mass = 1.0
+		},
+		Size_Temp = {
+			size = 0.7
+		},
+		EnemyController = {
+			enemySpeed = 75.0,
+			timeBetweenMovements = 1.0
+		}
+	},
+	
+	enemy4 = {
+		Transform = {
+			PositionX = -300,
+			PositionY = 200,
+			PositionZ = 300,
+			ScaleX = 80,
+			ScaleY = 80,
+			ScaleZ = 80
+		},
+		Mesh = {
+			entityName = "mesh_enemy4",
+			mesh = "amongus.mesh",
+			material = "amongus_red",
+		},
+		Rigidbody = {
+			mass = 1.0
+		},
+		Size_Temp = {
+			size = 0.7
+		},
+		EnemyController = {
+			enemySpeed = 75.0,
+			timeBetweenMovements = 1.0
+		}
+	},
+	
+	enemy5 = {
+		Transform = {
+			PositionX = 300,
+			PositionY = 200,
+			PositionZ = -300,
+			ScaleX = 80,
+			ScaleY = 80,
+			ScaleZ = 80
+		},
+		Mesh = {
+			entityName = "mesh_enemy5",
+			mesh = "amongus.mesh",
+			material = "amongus_red",
+		},
+		Rigidbody = {
+			mass = 1.0
+		},
+		Size_Temp = {
+			size = 0.7
+		},
+		EnemyController = {
+			enemySpeed = 75.0,
+			timeBetweenMovements = 1.0
+		}
+	},
+	
+	enemy6 = {
+		Transform = {
+			PositionX = -300,
+			PositionY = 200,
+			PositionZ = -300,
+			ScaleX = 100,
+			ScaleY = 100,
+			ScaleZ = 100
+		},
+		Mesh = {
+			entityName = "mesh_enemy6",
+			mesh = "amongus.mesh",
+			material = "amongus_red",
+		},
+		Rigidbody = {
+			mass = 1.0
+		},
+		Size_Temp = {
+			size = 1.5
 		},
 		EnemyController = {
 			enemySpeed = 75.0,
