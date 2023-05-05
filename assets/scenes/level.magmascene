@@ -18,7 +18,7 @@ entities = {
 		Mesh = {
 			entityName = "mesh_axolotl",
 			mesh = "axolotl.mesh",
-			material = "axolotl",
+			material = "axolotl"
 		},
 		Rigidbody = {
 			mass = 1.0
@@ -41,7 +41,7 @@ entities = {
 			x = 110,
 			y = 0,
 			progress = 0, 
-			limit = 5,
+			limit = 5
 		},
 		Image = {
 			overlayName = "backgroundPrueba",
@@ -69,7 +69,7 @@ entities = {
 		Mesh = {
 			entityName = "mesh_enemy1",
 			mesh = "amongus.mesh",
-			material = "amongus_red",
+			material = "amongus_cyan"
 		},
 		Rigidbody = {
 			mass = 1.0
@@ -95,7 +95,7 @@ entities = {
 		Mesh = {
 			entityName = "mesh_enemy2",
 			mesh = "amongus.mesh",
-			material = "amongus_red",
+			material = "amongus_lime"
 		},
 		Rigidbody = {
 			mass = 1.0
@@ -121,7 +121,7 @@ entities = {
 		Mesh = {
 			entityName = "mesh_enemy3",
 			mesh = "amongus.mesh",
-			material = "amongus_red",
+			material = "amongus_yellow"
 		},
 		Rigidbody = {
 			mass = 1.0
@@ -147,13 +147,13 @@ entities = {
 		Mesh = {
 			entityName = "mesh_enemy4",
 			mesh = "amongus.mesh",
-			material = "amongus_red",
+			material = "amongus_blue"
 		},
 		Rigidbody = {
 			mass = 1.0
 		},
 		Size_Temp = {
-			size = 0.7
+			size = 1
 		},
 		EnemyController = {
 			enemySpeed = 75.0,
@@ -173,13 +173,13 @@ entities = {
 		Mesh = {
 			entityName = "mesh_enemy5",
 			mesh = "amongus.mesh",
-			material = "amongus_red",
+			material = "amongus_purple"
 		},
 		Rigidbody = {
 			mass = 1.0
 		},
 		Size_Temp = {
-			size = 0.7
+			size = 1.2
 		},
 		EnemyController = {
 			enemySpeed = 75.0,
@@ -199,7 +199,7 @@ entities = {
 		Mesh = {
 			entityName = "mesh_enemy6",
 			mesh = "amongus.mesh",
-			material = "amongus_red",
+			material = "amongus_white"
 		},
 		Rigidbody = {
 			mass = 1.0
@@ -210,6 +210,58 @@ entities = {
 		EnemyController = {
 			enemySpeed = 75.0,
 			timeBetweenMovements = 1.0
+		}
+	},
+	
+	enemy7 = {
+		Transform = {
+			PositionX = 500,
+			PositionY = 200,
+			PositionZ = -300,
+			ScaleX = 100,
+			ScaleY = 100,
+			ScaleZ = 100
+		},
+		Mesh = {
+			entityName = "mesh_enemy7",
+			mesh = "amongus.mesh",
+			material = "amongus_black"
+		},
+		Rigidbody = {
+			mass = 1.0
+		},
+		Size_Temp = {
+			size = 2.1
+		},
+		EnemyController = {
+			enemySpeed = 75.0,
+			timeBetweenMovements = 1.0
+		}
+	},
+	powerup = {
+		Transform = {
+			PositionX = -500,
+			PositionY = 200,
+			PositionZ = 300,
+			ScaleX = 0.1,
+			ScaleY = 0.1,
+			ScaleZ = 0.1
+		},
+		Mesh = {
+			entityName = "mesh_powerup",
+			mesh = "sphere.mesh",
+			material = "black"
+		},
+		Rigidbody = {
+			mass = 1.0
+		},
+		EnemyController = {
+			enemySpeed = 75.0,
+			timeBetweenMovements = 1.0
+		},
+		PowerUpComponent = {
+			Size = 0.2,
+			Vel = 100
 		}
 	},
 
@@ -249,7 +301,7 @@ entities = {
 		Mesh = {
 			entityName = "sehisolalus",
 			mesh = "SUN",
-			material = "default",
+			material = "default"
 		},
 		AudioSource = {
 			path = "popcorn.wav",
@@ -277,7 +329,6 @@ entities = {
 		Rigidbody = {
 			mass = 0.0
 		}
-		
 	},
 
 	wall2 = {
@@ -297,7 +348,6 @@ entities = {
 		Rigidbody = {
 			mass = 0.0
 		}
-		
 	},
 
 	wall3 = {
@@ -317,7 +367,6 @@ entities = {
 		Rigidbody = {
 			mass = 0.0
 		}
-		
 	},
 
 	wall4 = {
@@ -337,6 +386,5 @@ entities = {
 		Rigidbody = {
 			mass = 0.0
 		}
-		
 	}
 }
