@@ -3,8 +3,9 @@
 #include <TheRiseOfSuxalote/progress_bar.h>
 #include <TheRiseOfSuxalote/player_controller.h>
 #include <TheRiseOfSuxalote/size_temp.h>
+#include <TheRiseOfSuxalote/endgame.h>
 
-magma_game::Size_Temp::Size_Temp() : tam(1.0f), isAPlayer(false)
+magma_game::Size_Temp::Size_Temp() : tam(1.0f), maxTam(2.0f), isAPlayer(false)
 {
 }
 
@@ -32,18 +33,20 @@ bool magma_game::Size_Temp::start() {
 	if (trPtr == nullptr || rbPtr == nullptr)
 		return false;
 
-	prBarPtr = ent->getComponent<Progress_Bar>();
+	if (ent->hasComponent<Progress_Bar>()) {
+		prBarPtr = ent->getComponent<Progress_Bar>();
+		if (prBarPtr != nullptr)
+		{
+			prBarPtr->setProgress(tam);
+			// establecer maxTam en barra progreso
+		}
+		else
+		{
+			std::cout << "WARNING! No hay progress bar en Size_temp \n\n";
+			return false;
+		}
+	}
 
-	if (prBarPtr != nullptr)
-	{
-		prBarPtr->setProgress(tam);
-		// establecer maxTam en barra progreso
-	}
-	else
-	{
-		std::cout << "WARNING! No hay progress bar en Size_temp \n\n";
-		return false;
-	}
 	
 	originalScale = trPtr->getScale();
 	isAPlayer = ent->hasComponent<PlayerController>();
@@ -55,38 +58,29 @@ bool magma_game::Size_Temp::start() {
 
 void magma_game::Size_Temp::update(float deltaTime)
 {
-	if (rbPtr->isOnCollision()) {
+	if (isAPlayer && rbPtr->isOnCollision()) {
 		auto colEnts = rbPtr->getCollisionObjs();
 		for (int i = 0; i < colEnts.size(); i++) {
 			if (colEnts[i]->hasComponent<Size_Temp>()) {
 				float otherS = colEnts[i]->getComponent<Size_Temp>()->getTam();
-				if (isAPlayer || colEnts[i]->getComponent<Size_Temp>()->isPlayer()) {
-					if (otherS > tam) {
-						ent->setAlive(false);
+				if (otherS > tam) {
+
+					if (ent->hasComponent<Endgame>())
+						ent->getComponent<Endgame>()->winOrLose(false);
+				}
+				else
+				{
+					colEnts[i]->setAlive(false);
+
+					tam += 2.0f;
+
+					if (tam >= maxTam)
+					{
+						if (ent->hasComponent<Endgame>())
+							ent->getComponent<Endgame>()->winOrLose(true);
 					}
-					else if (tam > otherS) {
-						//aqui se aumentara el tamaño del personaje segun la diferencia de tamaño entre ellos
-						if (tam - otherS >= 0.7f) {
-							tam = tam + 0.1f;
-						}
-						else {
-							tam = tam + 0.2f;
-						}
-						trPtr->setScale(originalScale * tam);
-					}
-					else {
-						//si tienen el mismo tamaño el jugador se lo come
-						if (isAPlayer) {
-							tam = tam + 0.2f;
-							trPtr->setScale(originalScale * tam);
-							
-							if (prBarPtr != nullptr)
-								prBarPtr->setProgress(tam);
-						}
-						else {
-							ent->setAlive(false);
-						}
-					}
+
+					trPtr->setScale(originalScale * tam);
 				}
 			}
 		}
@@ -96,11 +90,6 @@ void magma_game::Size_Temp::update(float deltaTime)
 float magma_game::Size_Temp::getTam()
 {
 	return tam;
-}
-
-bool magma_game::Size_Temp::isPlayer()
-{
-	return isAPlayer;
 }
 
 void magma_game::Size_Temp::setTam(float ntam)

@@ -35,8 +35,13 @@ entities = {
 			y = 0,
 			progress = 0, 
 			limit = 5,
-		}
+		},
+		Endgame = {
+			winRoute = "assets/scenes/win.magmascene",
+			lostRoute = "assets/scenes/lose.magmascene"
+		}		
 	},
+	
 	powerup = {
 		Transform = {
 			PositionX = -200,
@@ -47,22 +52,22 @@ entities = {
 			ScaleZ = 50
 		},
 		Mesh = {
-			entityName = "mesh_powerup",
+			entityName = "mesh_powerup2",
 			mesh = "amongus.mesh",
 			material = "amongus_red",
 		},
 		Rigidbody = {
 			mass = 1.0
 		},
-		PowerUpComponent = {
-			Size = 0.2,
-			Vel = 50.0
+		Size_Temp = {
+			size = 2.0
 		},
 		EnemyController = {
 			enemySpeed = 75.0,
 			timeBetweenMovements = 1.0
 		}
 	},
+
 	cube = {
 		Transform = {
 			PositionX = 1.25,
@@ -104,7 +109,7 @@ entities = {
 		AudioSource = {
 			path = "popcorn.wav",
 			vol = 50,
-			channel = 2,
+			channel = 3,
 			loop = 1,
 			start = 1
 		}

@@ -1,0 +1,68 @@
+SceneLoader:printInfo()
+
+entities = {
+		background = {
+		Image = {
+			overlayName = "ImgFondoLose",
+			name = "magma_background",
+			width = 1280,
+			height = 720,
+			x = 0,
+			y = 0
+		}
+	},
+
+	titleImage = {
+		Image = {
+			overlayName = "ImgEndTitle",
+			name = "button_transparent",
+			width = 750,
+			height = 80,
+			x = 270,
+			y = 190
+		}, 
+
+		Text = {
+			overlayName = "textitoEnd",
+			title = "textacoEnd",
+			font = "minecraft_font",
+			textCont = "You Died",
+			width = 60,
+			height = 60,
+			x = 300,
+			y = 200,
+			r = 1,
+			g = 1,
+			b = 1
+		}
+	}, 
+
+	buttonStart = 
+	{
+		Button = {
+			overlayName = "buttonPruebaEnd",
+			imageName = "button_solid",
+			hoverImageName = "button_transparent",
+			pressedImageName = "button_bright",
+			buttonType = "BACK_SCENE",
+			sceneRoute = "",
+			width = 300,
+			height = 80,
+			x = 500,
+			y = 600
+		}, 
+		Text = {
+			overlayName = "textilloEnd",
+			title = "texttitleEnd",
+			font = "minecraft_font",
+			textCont = "Menu",
+			width = 30,
+			height = 60,
+			x = 590,
+			y = 310,
+			r = 0,
+			g = 0,
+			b = 0
+		}
+	}
+}

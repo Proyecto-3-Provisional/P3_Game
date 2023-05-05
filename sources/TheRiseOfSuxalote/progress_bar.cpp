@@ -14,7 +14,9 @@ namespace magma_game
 
 	}
 
-	Progress_Bar::~Progress_Bar() {}
+	Progress_Bar::~Progress_Bar() {
+		Singleton<magma_engine::UI_Manager>::instance()->deleteElement(progressBar);
+	}
 
 	std::string Progress_Bar::GetName()
 	{

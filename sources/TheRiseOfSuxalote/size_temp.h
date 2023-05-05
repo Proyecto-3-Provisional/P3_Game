@@ -23,12 +23,12 @@ namespace magma_game
 		void update(float deltaTime);
 
 		float getTam();
-		bool isPlayer();
 
 		void setTam(float ntam);
 
-		float tam = 1.0f;
-		bool isAPlayer = false;
+		float tam;
+		float maxTam; 
+		bool isAPlayer;
 
 	private:
 		magma_engine::Transform* trPtr = nullptr;

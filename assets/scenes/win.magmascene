@@ -1,0 +1,70 @@
+SceneLoader:printInfo()
+
+SceneLoader:printInfo()
+
+entities = {
+		background = {
+		Image = {
+			overlayName = "ImgFondoWin",
+			name = "magma_background",
+			width = 1280,
+			height = 720,
+			x = 0,
+			y = 0
+		}
+	},
+
+	titleImage = {
+		Image = {
+			overlayName = "ImgEndTitleWin",
+			name = "button_transparent",
+			width = 750,
+			height = 80,
+			x = 270,
+			y = 190
+		}, 
+
+		Text = {
+			overlayName = "textitoEndWin",
+			title = "textacoEndWin",
+			font = "minecraft_font",
+			textCont = "You WIN",
+			width = 60,
+			height = 60,
+			x = 300,
+			y = 200,
+			r = 1,
+			g = 1,
+			b = 1
+		}
+	}, 
+
+	buttonStart = 
+	{
+		Button = {
+			overlayName = "buttonPruebaEndWin",
+			imageName = "button_solid",
+			hoverImageName = "button_transparent",
+			pressedImageName = "button_bright",
+			buttonType = "BACK_SCENE",
+			sceneRoute = "",
+			width = 300,
+			height = 80,
+			x = 500,
+			y = 300
+		}, 
+		Text = {
+			overlayName = "textilloEndWin",
+			title = "texttitleEndWin",
+			font = "minecraft_font",
+			textCont = "Menu",
+			width = 30,
+			height = 60,
+			x = 590,
+			y = 310,
+			r = 0,
+			g = 0,
+			b = 0
+		}
+	}
+}
