@@ -1,3 +1,4 @@
 [submodule "MagmaEngine"]
+	branch = main
 	path = MagmaEngine
 	url = https://github.com/Proyecto-3-Provisional/Magma_Engine
