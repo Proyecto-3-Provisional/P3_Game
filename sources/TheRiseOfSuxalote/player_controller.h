@@ -4,6 +4,7 @@
 #include <EC/vector3D.h>
 #include <Physics/rigidbody.h>
 #include <EC/transform.h>
+#include <Render/particle_system.h>
 
 namespace magma_game
 {
@@ -27,5 +28,7 @@ namespace magma_game
 		//simula al ajolote nadando a "empujones"
 		float timeBetweenMovements;
 		float currTimeBetweenMovements;
+
+		magma_engine::ParticleSystem* partsyst = nullptr;
 	};
 }

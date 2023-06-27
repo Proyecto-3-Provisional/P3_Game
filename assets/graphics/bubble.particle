@@ -9,10 +9,10 @@ particle_system bubble_burst {
 
 	emitter Point {
 	// e. attributes
-	direction 1 0 0
+	direction -1 0 0
 	angle 5
 	emission_rate 15
-	time_to_live 3
+	time_to_live 0.5 //3
 	velocity_min 400
 	velocity_max 450
 	duration 0

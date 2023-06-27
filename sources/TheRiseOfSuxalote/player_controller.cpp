@@ -36,7 +36,8 @@ namespace magma_game
 	{
 		tr = ent->getComponent<magma_engine::Transform>();
 		rb = ent->getComponent<magma_engine::Rigidbody>();
-		return (tr != nullptr && rb != nullptr);
+		partsyst = ent->getComponent<magma_engine::ParticleSystem>();
+		return (tr != nullptr && rb != nullptr && partsyst != nullptr);
 	}
 
 	void PlayerController::update(float deltaTime)
@@ -83,6 +84,11 @@ namespace magma_game
 			if (move && movementDirection.magnitude() != 0) {
 				tr->setDirection(movementDirection);
 				currTimeBetweenMovements = timeBetweenMovements;
+				if (partsyst != nullptr) 
+				{
+					partsyst->emisionControl(true);
+				}
+					
 			}
 
 		}
