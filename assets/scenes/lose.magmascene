@@ -1,6 +1,24 @@
 SceneLoader:printInfo()
 
 entities = {
+	cameraLose = {
+		Camera = {
+			camPosX = 0,
+			camPosY = 1000,
+			camPosZ = 500,
+			camLookX = 0,
+			camLookY = -1000,
+			camLookZ = 0,
+			redBG = 0.8,
+			greenBG = 0.8,
+			blueBG = 0.7,
+			showModeValue = 0,
+			pitch = 25.0,
+			yaw = 0.0,
+			roll = 0.0
+		}
+	},
+
 		background = {
 		Image = {
 			overlayName = "ImgFondoLose",
