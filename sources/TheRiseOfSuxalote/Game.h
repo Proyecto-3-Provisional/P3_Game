@@ -5,11 +5,12 @@
 #endif
 
 #include <string>
+#include <vector>
 
 namespace magma_engine {
 	class CMagmaEngine;
 }
 
 namespace magma_game {
-	extern "C" SUXALOTE_API std::string gameNameScene();
+	extern "C" SUXALOTE_API void __cdecl gameNameScene(std::vector<std::string>& strings);
 }

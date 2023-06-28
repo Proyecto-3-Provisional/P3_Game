@@ -52,8 +52,8 @@ entities = {
 			y = 0
 		},
 		Endgame = {
-			winRoute = "assets/scenes/win.magmascene",
-			lostRoute = "assets/scenes/lose.magmascene"
+			winRoute = "win",
+			lostRoute = "lose"
 		},
 		ParticleSystem = {
 			name = "psBubble",

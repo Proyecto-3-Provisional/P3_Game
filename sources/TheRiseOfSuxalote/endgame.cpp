@@ -42,25 +42,21 @@ namespace magma_game
 
 	void Endgame::winOrLose(bool victory)
 	{
-		bool sceneRead;
+		SceneMap* sncMp;
 
 		if (victory)
-			sceneRead = Singleton<magma_engine::SceneLoader>::instance()->loadScene(victoryRoute);
+			sncMp = Singleton<magma_engine::SceneLoader>::instance()->getMapFile(victoryRoute);
 
 		else
-			sceneRead = Singleton<magma_engine::SceneLoader>::instance()->loadScene(loseRoute);
+			sncMp = Singleton<magma_engine::SceneLoader>::instance()->getMapFile(loseRoute);
 
-		if (sceneRead >= 0)
-		{
-			SceneMap* sncMp = Singleton<magma_engine::SceneLoader>::instance()->getMapFile();
+		magma_engine::Scene* scn = new magma_engine::Scene();
 
-			magma_engine::Scene* scn = new magma_engine::Scene();
+		bool sceneCreated = scn->loadScene(sncMp);
 
-			bool sceneCreated = scn->loadScene(sncMp);
+		if (sceneCreated)
+			Singleton<magma_engine::SceneManager>::instance()->changeScene(scn);
+		else delete scn;
 
-			if (sceneCreated)
-				Singleton<magma_engine::SceneManager>::instance()->changeScene(scn);
-			else delete scn;
-		}
 	}
 }

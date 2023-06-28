@@ -1,12 +1,15 @@
 #include <iostream>
 
+
 #include <TheRiseOfSuxalote/Game.h>
 
 namespace magma_game {
-	std::string gameNameScene() {
+	void gameNameScene(std::vector<std::string>& strings) {
 		std::cout << "Inicio del juego\n";
 
-		return "assets/scenes/menu.magmascene";
-
+		strings.push_back("menu");
+		strings.push_back("lose");
+		strings.push_back("level");
+		strings.push_back("win");
 	}
 }
