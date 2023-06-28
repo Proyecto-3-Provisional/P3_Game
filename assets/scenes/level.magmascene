@@ -303,10 +303,14 @@ entities = {
 			ScaleY = 1,
 			ScaleZ = 1
 		},
-		Mesh = {
-			entityName = "sehisolalus",
-			mesh = "SUN",
-			material = "default"
+		Light = {
+			diffuseColorX = 0.9,
+			diffuseColorY = 0.9,
+			diffuseColorZ = 0.9,
+			lightType = "DIRECTIONAL",
+			innerAngle = 0,
+			outerAngle = 0,
+			falloff = 0
 		},
 		AudioSource = {
 			path = "popcorn.wav",
