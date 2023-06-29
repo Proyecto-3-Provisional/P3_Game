@@ -65,6 +65,12 @@ namespace magma_game
 		magma_engine::Component* createComponent(magma_engine::Entity* e);
 	};
 
+	class RedFactory : public magma_engine::Factory
+	{
+	public:
+		magma_engine::Component* createComponent(magma_engine::Entity* e);
+	};
+
 	extern "C" SUXALOTE_API void setUpGameFactories();
 }
 

@@ -51,6 +51,9 @@
     <ClCompile Include="..\..\sources\TheRiseOfSuxalote\mina.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\sources\TheRiseOfSuxalote\red.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\sources\TheRiseOfSuxalote\framework.h">
@@ -87,6 +90,9 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="..\..\sources\TheRiseOfSuxalote\mina.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sources\TheRiseOfSuxalote\red.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

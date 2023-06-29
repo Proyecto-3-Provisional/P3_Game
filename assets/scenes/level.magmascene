@@ -449,5 +449,44 @@ entities = {
 		Rigidbody = {
 			mass = 0.0
 		}
+	},
+
+	red1 = {
+		Transform = {
+			PositionX = -400,
+			PositionY = 200,
+			PositionZ = 0,
+			ScaleX = 1.0, 
+			ScaleY = 1.0, 
+			ScaleZ = 1.0 
+		},
+		Mesh = {
+			entityName = "mesh_red1",
+			mesh = "cube.mesh",
+			material = "red"
+		},
+		Rigidbody = {
+			mass = 0.0
+		},
+		Text = {
+			overlayName = "timerRed",
+			title = "redTimerTitle",
+			font = "minecraft_font",
+			textCont = "6",
+			width = 40,
+			height = 40,
+			x = 1150,
+			y = 150,
+			r = 0.0,
+			g = 1.0,
+			b = 0.0
+		},
+		Timer = {
+			time = 5.0
+		},
+		Red = {
+			penSpeed = 100.0,
+			penTime = 5.0
+		}	
 	}
 }
