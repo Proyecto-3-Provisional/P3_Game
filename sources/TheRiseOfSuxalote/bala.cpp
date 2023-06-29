@@ -3,6 +3,7 @@
 #include <Input/input_manager.h>
 
 #include <EC/scene_manager.h>
+#include <Render/render_manager.h>
 #include <EC/entity.h>
 #include <EC/transform.h>
 #include <TheRiseOfSuxalote/endgame.h>
@@ -17,9 +18,11 @@ namespace magma_game
 	{
 		try {
 			velocidad = stoi(args["Vel"]);
+			seconds = stof(args["Vida"]);
 			float dirX = stof(args["DirX"]);
 			float dirY = stof(args["DirY"]);
 			float dirZ = stof(args["DirZ"]);
+			
 
 			dir = magma_engine::Vector3D(dirX, dirY, dirZ);
 		}
@@ -39,6 +42,10 @@ namespace magma_game
 
 	void Bala::update(float deltaTime)
 	{
+		seconds -= deltaTime;
+		if (seconds < 0)
+			ent->setAlive(false);
+
 		magma_engine::Entity* player = nullptr;
 		for (magma_engine::Entity* e : Singleton<magma_engine::SceneManager>::instance()->getSceneEntities()) {
 			if (e->hasComponent<Endgame>() && e->hasComponent<magma_engine::Transform>()) {
@@ -67,8 +74,6 @@ namespace magma_game
 			Endgame* endPlayer = player->getComponent<Endgame>();
 			endPlayer->winOrLose(false);
 		}
-		else {
-			tr->setPosition(tr->getPos() + (dir * (velocidad * deltaTime)));
-		}
+		tr->setPosition(tr->getPos() + (dir * (velocidad * deltaTime)));
 	}
 }

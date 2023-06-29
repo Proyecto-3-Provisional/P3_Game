@@ -21,6 +21,7 @@ namespace magma_game
 
 	private:
 		int velocidad;
+		float seconds;
 		magma_engine::Vector3D dir;
 		magma_engine::Transform* tr = nullptr;
 	};

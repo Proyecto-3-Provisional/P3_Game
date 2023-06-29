@@ -393,7 +393,8 @@ entities = {
 			DirX = 1,
 			DirY = 0,
 			DirZ = 0,
-			Vel = 50
+			Vel = 50,
+			Vida = 15
 		}
 	},
 
