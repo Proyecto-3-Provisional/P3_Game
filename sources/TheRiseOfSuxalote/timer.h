@@ -27,6 +27,8 @@ namespace magma_game
 		void pause(); // Pausa el timer
 		void resume(); // Reanuda el timer
 
+		void setVisible(bool visible); // Oculta o muestra el timer
+
 		void setTime(float time); // Establece el tiempo restante del timer
 		int getTime(); // Obtener el tiempo restante del timer
 

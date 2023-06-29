@@ -38,14 +38,18 @@ namespace magma_game
 
 	void Timer::onEnable() 
 	{
-		if (textTime != nullptr)
-			textTime->onEnable();
+		setVisible(true);
 	}
 
 	void Timer::onDisable() 
 	{
+		setVisible(false);
+	}
+
+	void Timer::setVisible(bool visible) 
+	{
 		if (textTime != nullptr)
-			textTime->onDisable();
+			visible ? textTime->onEnable() : textTime->onDisable();
 	}
 
 	void Timer::setTime(float time) 
