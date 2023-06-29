@@ -1,48 +1,41 @@
 #pragma once
 
-#include <EC/component.h>
 #include <Render/text.h>
+
+namespace magma_engine 
+{
+	class Text;
+	class UI_Manager;
+}
 
 namespace magma_game
 {
 	class Timer : public magma_engine::Component
 	{
 	public:
-
-		//Metodo de declaración del componente
 		Timer();
 		virtual ~Timer();
 
-		virtual bool initComponent();
-
-		virtual void render() {};
-
-		//Metodos para activación o desactivación del componente
-		virtual void onEnable();
-		virtual void onDisable();
-
-		//Metodo para inicializar el componente
+		virtual bool initComponent(std::map<std::string, std::string> args);
 		virtual bool start();
-
-		//Metodo para actualizar el componente
 		virtual void update(float deltaTime);
 
-		void reset(); 
-		void pause();
-		void resume(); 
+		virtual void onEnable(); // Activacion del componente
+		virtual void onDisable(); // Desactivacion del componente
 
-		int getTimer(); 
+		void reset(); // Reestablece el timer a su valor inicial
+		void pause(); // Pausa el timer
+		void resume(); // Reanuda el timer
 
-		void assignText(magma_engine::Text* text);
+		void setTime(float time); // Establece el tiempo restante del timer
+		int getTime(); // Obtener el tiempo restante del timer
 
 	private:
+		float remainingTime; // Tiempo restante
+		float initialTime; // Tiempo inicial
+		bool isPaused; // Indica si el timer se encuentra pausado
 
-		magma_engine::Text* textTime;
-
-		bool timerPause; 
-
-		int time; 
-		int timeStop; 
+		magma_engine::Text* textTime; // Componente texto del timer
 	};
 }
 

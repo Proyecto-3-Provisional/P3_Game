@@ -1,38 +1,45 @@
 #include <TheRiseOfSuxalote/timer.h>
 
+#include <string>
+#include <iostream>
 #include <SDL_timer.h>
+
+#include <Render/text.h>
+#include <Render/UI_Manager.h>
+#include <TheRiseOfSuxalote/endgame.h>
 
 namespace magma_game
 {
-	Timer::Timer() : textTime(nullptr), timerPause(false), time(0), timeStop(0) 
-	{
-	}
+	Timer::Timer() : textTime(), isPaused(), remainingTime(), initialTime() { }
 
-	Timer::~Timer()
-	{
-	}
+	Timer::~Timer() { }
 
-	bool Timer::initComponent() 
+	bool Timer::initComponent(std::map<std::string, std::string> args)
 	{ 
-		time = 0;
-		timeStop = 0;
+		try {
+			remainingTime = std::stof(args["time"]);
+		}
+		catch (std::exception& e) {
+			std::cout << "WARNING! - error en un componente timer:\n\n     " << e.what() << "\n\n";
 
-		timerPause = false;
-
-		textTime = nullptr;
-		return true; 
+			return false;
+		}
+		return true;
 	}
 
 	bool Timer::start()
 	{
-		reset();
+		initialTime = remainingTime;
+		textTime = ent->getComponent<magma_engine::Text>();
+		if (textTime == nullptr) return false;
+
 		return true;
 	}
 
 	void Timer::onEnable() 
 	{
 		if (textTime != nullptr)
-			textTime->onEnable(); 
+			textTime->onEnable();
 	}
 
 	void Timer::onDisable() 
@@ -41,47 +48,44 @@ namespace magma_game
 			textTime->onDisable();
 	}
 
-	int Timer::getTimer()
+	void Timer::setTime(float time) 
 	{
-		if (timerPause)
-			return (timeStop - time);
-		else
-			return (SDL_GetTicks() - time); 
+		remainingTime = time;
 	}
 
-	void Timer::assignText(magma_engine::Text* text)
+	int Timer::getTime()
 	{
-		textTime = text; 
+		return remainingTime; 
 	}
 
 	void Timer::update(float deltaTime) 
 	{
-		if (textTime != nullptr)
-			textTime->changeText(std::to_string(getTimer()));
+		if (textTime != nullptr && !isPaused && remainingTime > 0)
+		{
+			remainingTime -= deltaTime;
+			textTime->changeText(std::to_string(getTime()));
+
+			if (remainingTime <= 0 && ent->hasComponent<Endgame>())
+				ent->getComponent<Endgame>()->winOrLose(false);
+		}
 	}
 
 	void Timer::reset()
 	{
-		timerPause = false;
-		time = 0; 
+		isPaused = false;
+		remainingTime = initialTime; 
 	}
 
 	void Timer::pause()
 	{
-		if (!timerPause)
-		{
-			timerPause = true;
-			timeStop = SDL_GetTicks();
-		}
+		if (!isPaused)
+			isPaused = true;
 	}
 
 	void Timer::resume()
 	{
-		if (timerPause)
-		{
-			timerPause = false;
-			time += (SDL_GetTicks() - timeStop);
-		}
+		if (isPaused)
+			isPaused = false;
 	}
 }
 
