@@ -10,7 +10,7 @@
 
 namespace magma_game
 {
-	Bala::Bala() {}
+	Bala::Bala() : velocidad(0), seconds(.0f), dir(magma_engine::Vector3D(.0f, .0f, .0f)){}
 
 	Bala::~Bala() {}
 
@@ -25,6 +25,7 @@ namespace magma_game
 			
 
 			dir = magma_engine::Vector3D(dirX, dirY, dirZ);
+			dir.normalize();
 		}
 		catch (std::exception& e) {
 			std::cout << "WARNING! - error en un componente endgame:\n\n     " << e.what() << "\n\n";
@@ -46,6 +47,13 @@ namespace magma_game
 		if (seconds < 0)
 			ent->setAlive(false);
 
+		detectCollision();
+		
+		tr->setPosition(tr->getPos() + (dir * (velocidad * deltaTime)));
+	}
+
+	void Bala::detectCollision()
+	{
 		magma_engine::Entity* player = nullptr;
 		for (magma_engine::Entity* e : Singleton<magma_engine::SceneManager>::instance()->getSceneEntities()) {
 			if (e->hasComponent<Endgame>() && e->hasComponent<magma_engine::Transform>()) {
@@ -74,6 +82,5 @@ namespace magma_game
 			Endgame* endPlayer = player->getComponent<Endgame>();
 			endPlayer->winOrLose(false);
 		}
-		tr->setPosition(tr->getPos() + (dir * (velocidad * deltaTime)));
 	}
 }
