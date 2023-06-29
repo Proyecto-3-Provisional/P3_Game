@@ -9,6 +9,7 @@
 #include <TheRiseOfSuxalote/timer.h>
 #include <TheRiseOfSuxalote/power_up.h>
 #include <TheRiseOfSuxalote/endgame.h>
+#include <TheRiseOfSuxalote/mina.h>
 
 namespace magma_game
 {
@@ -47,6 +48,11 @@ namespace magma_game
 		return e->addComponent<Endgame>();
 	}
 
+	magma_engine::Component* MinaFactory::createComponent(magma_engine::Entity* e)
+	{
+		return e->addComponent<Mina>();
+	}
+
 	void setUpGameFactories()
 	{
 		Singleton<magma_engine::FactoryManager>::instance()->addFactory("PlayerController", new PlayerControllerFactory());
@@ -56,6 +62,7 @@ namespace magma_game
 		Singleton<magma_engine::FactoryManager>::instance()->addFactory("Size_Temp", new SizeTempFactory());
 		Singleton<magma_engine::FactoryManager>::instance()->addFactory("Endgame", new EndgameFactory());
 		Singleton<magma_engine::FactoryManager>::instance()->addFactory("PowerUpComponent", new PowerUpFactory());
+		Singleton<magma_engine::FactoryManager>::instance()->addFactory("Mina", new MinaFactory());
 	}
 }
 

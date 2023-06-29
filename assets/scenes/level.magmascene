@@ -354,6 +354,27 @@ entities = {
 		}
 	},
 
+	mina1 = {
+		Transform = {
+			PositionX = 0,
+			PositionY = 200,
+			PositionZ = -400,
+			ScaleX = 0.2,
+			ScaleY = 0.2,
+			ScaleZ = 0.2
+		},
+		Mesh = {
+			entityName = "mina1",
+			mesh = "cube.mesh",
+			material = "black"
+		},
+		Rigidbody = {
+			mass = 0.0
+		},
+		Mina = {
+		}
+	},
+
 	wall1 = {
 		Transform = {
 			PositionX = 0,
