@@ -44,11 +44,9 @@ namespace magma_game
 	{
 		SceneMap* sncMp;
 
-		if (victory)
-			sncMp = Singleton<magma_engine::SceneLoader>::instance()->getMapFile(victoryRoute);
-
-		else
-			sncMp = Singleton<magma_engine::SceneLoader>::instance()->getMapFile(loseRoute);
+		std::string nextScene = victory ? victoryRoute : loseRoute;
+		
+		sncMp = Singleton<magma_engine::SceneLoader>::instance()->getMapFile(nextScene);
 
 		magma_engine::Scene* scn = new magma_engine::Scene();
 
@@ -56,7 +54,10 @@ namespace magma_game
 
 		if (sceneCreated)
 			Singleton<magma_engine::SceneManager>::instance()->changeScene(scn);
-		else delete scn;
+		else {
+			Singleton<magma_engine::SceneManager>::instance()->setSceneFailed(nextScene);
+			delete scn;
+		}
 
 	}
 }
