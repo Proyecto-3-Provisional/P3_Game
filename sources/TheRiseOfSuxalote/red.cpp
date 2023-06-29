@@ -49,10 +49,7 @@ namespace magma_game
 		}
 
 		
-		penaltyTimer->setTime(penaltyTime);
-		//penaltyTimer->setVisible(false);
-		//penaltyTimer->pause();
-		
+		penaltyTimer->setTime(penaltyTime);	
 
 		return true;
 	}
@@ -94,15 +91,10 @@ namespace magma_game
 		e->getComponent<PlayerController>()->setVelocity(-penaltySpeed);
 
 		penaltyTimer->setVisible(true);
-		//penaltyTimer->resume();
 		penaltyTimer->reset();
 
 		colisioned = true;
 		ent->getComponent<magma_engine::Mesh>()->setVisible(false);
 	}
 
-	void Red::onEnable()
-	{
-		penaltyTimer->setVisible(false);
-	}
 }
