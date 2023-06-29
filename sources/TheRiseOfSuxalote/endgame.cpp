@@ -54,10 +54,8 @@ namespace magma_game
 
 		if (sceneCreated)
 			Singleton<magma_engine::SceneManager>::instance()->changeScene(scn);
-		else {
-			Singleton<magma_engine::SceneManager>::instance()->setSceneFailed(nextScene);
+		else
 			delete scn;
-		}
 
 	}
 }
