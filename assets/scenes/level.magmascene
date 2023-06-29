@@ -375,6 +375,28 @@ entities = {
 		}
 	},
 
+	bala1 = {
+		Transform = {
+			PositionX = -925,
+			PositionY = 200,
+			PositionZ = -0,
+			ScaleX = 0.2,
+			ScaleY = 0.2,
+			ScaleZ = 0.2
+		},
+		Mesh = {
+			entityName = "bala1",
+			mesh = "cube.mesh",
+			material = "black"
+		},
+		Bala = {
+			DirX = 1,
+			DirY = 0,
+			DirZ = 0,
+			Vel = 50
+		}
+	},
+
 	wall1 = {
 		Transform = {
 			PositionX = 0,

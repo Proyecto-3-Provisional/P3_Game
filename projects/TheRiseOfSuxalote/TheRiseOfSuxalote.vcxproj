@@ -170,6 +170,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\sources\TheRiseOfSuxalote\bala.cpp" />
     <ClCompile Include="..\..\sources\TheRiseOfSuxalote\dllmain.cpp" />
     <ClCompile Include="..\..\sources\TheRiseOfSuxalote\endgame.cpp" />
     <ClCompile Include="..\..\sources\TheRiseOfSuxalote\enemy_controller.cpp" />
@@ -185,6 +186,7 @@
     <ClCompile Include="..\..\sources\TheRiseOfSuxalote\timer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\sources\TheRiseOfSuxalote\bala.h" />
     <ClInclude Include="..\..\sources\TheRiseOfSuxalote\endgame.h" />
     <ClInclude Include="..\..\sources\TheRiseOfSuxalote\enemy_controller.h" />
     <ClInclude Include="..\..\sources\TheRiseOfSuxalote\framework.h" />

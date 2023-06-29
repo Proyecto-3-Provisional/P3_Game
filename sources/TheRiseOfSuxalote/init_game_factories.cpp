@@ -11,6 +11,7 @@
 #include <TheRiseOfSuxalote/endgame.h>
 #include <TheRiseOfSuxalote/mina.h>
 #include <TheRiseOfSuxalote/red.h>
+#include <TheRiseOfSuxalote/bala.h>
 
 namespace magma_game
 {
@@ -59,6 +60,11 @@ namespace magma_game
 		return e->addComponent<Red>();
 	}
 
+	magma_engine::Component* BalaFactory::createComponent(magma_engine::Entity* e)
+	{
+		return e->addComponent<Bala>();
+	}
+
 	void setUpGameFactories()
 	{
 		Singleton<magma_engine::FactoryManager>::instance()->addFactory("PlayerController", new PlayerControllerFactory());
@@ -70,6 +76,7 @@ namespace magma_game
 		Singleton<magma_engine::FactoryManager>::instance()->addFactory("PowerUpComponent", new PowerUpFactory());
 		Singleton<magma_engine::FactoryManager>::instance()->addFactory("Mina", new MinaFactory());
 		Singleton<magma_engine::FactoryManager>::instance()->addFactory("Red", new RedFactory());
+		Singleton<magma_engine::FactoryManager>::instance()->addFactory("Bala", new BalaFactory());
 	}
 }
 
